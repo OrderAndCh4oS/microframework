@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <article>
+            <div class="full-width">
+                {{ content | striptags('<ul><li><a>') | raw }}
+            </div>
+        </article>
+    {% endblock %}

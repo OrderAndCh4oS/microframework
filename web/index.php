@@ -1,6 +1,7 @@
 <?php
 	require '../vendor/autoload.php';
 	require '../app/doctrine/bootstrap.php';
+	include_once '../app/helpers/helpers.php';
 	include_once '../app/email/email.php';
 	include_once '../src/Page.php';
 
