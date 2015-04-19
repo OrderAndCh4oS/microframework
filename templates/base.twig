@@ -41,8 +41,12 @@
             <header class="main-header">
                 <h1><a href="{{ baseUrl() }}">Site Name</a></h1>
             </header>
-            {% block quote %}
+        </div>
+        <div class="full-width">
+            {% block nav %}
                 <div class="main-nav">
+                    <a href="{{ baseUrl() }}">Home</a>
+                    <a href="{{ siteUrl('/add-page/') }}">Add Page</a>
                 </div>
             {% endblock %}
         </div>

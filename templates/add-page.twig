@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <section>
+            <div class="full-width">
+                <h2>Add Page</h2>
+                <p>{{ flash.message }}</p>
+                <p>{{ name }}</p>
+                <form class="contact-us" id="contact_form" action="{{ siteUrl('/add-page/') }}" method="post" name="enquiry" novalidate="novalidate">
+                    <div class="form-field">
+                        <label for="name">Name<span>*</span></label>
+                        <input name="name" id="name" type="text" value="{{ field.name }}" maxlength="100">
+                    </div>
+                    <input class="button" name="submit" type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+    {% endblock %}

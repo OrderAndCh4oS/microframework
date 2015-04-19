@@ -475,93 +475,93 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 10, ../../../_sass/layout/_typography.scss */
 h1 {
-  font-size: 2.6rem;
+  font-size: 1.6rem;
 }
 
 /* line 13, ../../../_sass/layout/_typography.scss */
 h2 {
-  font-size: 2.1rem;
-}
-
-/* line 16, ../../../_sass/layout/_typography.scss */
-h3 {
   font-size: 1.3rem;
 }
 
-/* line 19, ../../../_sass/layout/_typography.scss */
+/* line 17, ../../../_sass/layout/_typography.scss */
+h3 {
+  font-size: 1rem;
+}
+
+/* line 20, ../../../_sass/layout/_typography.scss */
 h4, h5, h6 {
   font-size: 1rem;
 }
 
-/* line 22, ../../../_sass/layout/_typography.scss */
+/* line 23, ../../../_sass/layout/_typography.scss */
 p {
   color: #262729;
   font-size: 1rem;
   font-family: "Univers W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 27, ../../../_sass/layout/_typography.scss */
+/* line 28, ../../../_sass/layout/_typography.scss */
 a, a:visited {
   color: #262729;
   text-decoration: underline;
 }
 
-/* line 31, ../../../_sass/layout/_typography.scss */
+/* line 32, ../../../_sass/layout/_typography.scss */
 a:hover, a:focus {
   text-decoration: none;
 }
 
-/* line 35, ../../../_sass/layout/_typography.scss */
+/* line 36, ../../../_sass/layout/_typography.scss */
 menu,
 ol,
 ul {
   padding: 0;
 }
 
-/* line 41, ../../../_sass/layout/_typography.scss */
+/* line 42, ../../../_sass/layout/_typography.scss */
 nav ul,
 nav ol {
   list-style: none;
 }
 
-/* line 50, ../../../_sass/layout/_typography.scss */
+/* line 51, ../../../_sass/layout/_typography.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 55, ../../../_sass/layout/_typography.scss */
+/* line 56, ../../../_sass/layout/_typography.scss */
 blockquote {
   margin: 0 0 1.2rem;
   padding: 0 1.2rem;
   border-left: 3px solid #E8E8E8;
 }
 
-/* line 61, ../../../_sass/layout/_typography.scss */
+/* line 62, ../../../_sass/layout/_typography.scss */
 blockquote p:first-of-type:before {
   content: "\201C";
 }
 
-/* line 64, ../../../_sass/layout/_typography.scss */
+/* line 65, ../../../_sass/layout/_typography.scss */
 blockquote p:last-of-type:after {
   content: "\201D";
 }
 
-/* line 68, ../../../_sass/layout/_typography.scss */
+/* line 69, ../../../_sass/layout/_typography.scss */
 blockquote cite {
   font-style: normal;
 }
-/* line 70, ../../../_sass/layout/_typography.scss */
+/* line 71, ../../../_sass/layout/_typography.scss */
 blockquote cite:before {
   content: "\2014\2009";
 }
 
-/* line 75, ../../../_sass/layout/_typography.scss */
+/* line 76, ../../../_sass/layout/_typography.scss */
 q {
   font-style: italic;
 }
 
-/* line 79, ../../../_sass/layout/_typography.scss */
+/* line 80, ../../../_sass/layout/_typography.scss */
 hr {
   border: solid #262729;
   border-width: 3px 0 0;
@@ -572,52 +572,52 @@ hr {
 
 /* #Links
   ================================================== */
-/* line 89, ../../../_sass/layout/_typography.scss */
+/* line 90, ../../../_sass/layout/_typography.scss */
 a, a:visited {
   color: #262729;
   text-decoration: underline;
   outline: 0;
 }
 
-/* line 95, ../../../_sass/layout/_typography.scss */
+/* line 96, ../../../_sass/layout/_typography.scss */
 a:hover, a:focus {
   color: #262729;
 }
 
-/* line 99, ../../../_sass/layout/_typography.scss */
+/* line 100, ../../../_sass/layout/_typography.scss */
 p a, p a:visited {
   line-height: inherit;
 }
 
 /* #Lists
   ================================================== */
-/* line 105, ../../../_sass/layout/_typography.scss */
+/* line 106, ../../../_sass/layout/_typography.scss */
 ul, ol {
   margin-bottom: 1.2rem;
 }
 
-/* line 109, ../../../_sass/layout/_typography.scss */
+/* line 110, ../../../_sass/layout/_typography.scss */
 ul {
   list-style: none outside;
   margin-bottom: 2.4rem;
 }
 
-/* line 114, ../../../_sass/layout/_typography.scss */
+/* line 115, ../../../_sass/layout/_typography.scss */
 ol {
   list-style: decimal;
 }
 
-/* line 118, ../../../_sass/layout/_typography.scss */
+/* line 119, ../../../_sass/layout/_typography.scss */
 ul.square {
   list-style: square outside;
 }
 
-/* line 122, ../../../_sass/layout/_typography.scss */
+/* line 123, ../../../_sass/layout/_typography.scss */
 ul.circle {
   list-style: circle outside;
 }
 
-/* line 126, ../../../_sass/layout/_typography.scss */
+/* line 127, ../../../_sass/layout/_typography.scss */
 ul.disc {
   list-style: disc outside;
   margin-left: 1.2rem;
@@ -626,14 +626,14 @@ ul.disc {
   font-weight: 400;
 }
 
-/* line 134, ../../../_sass/layout/_typography.scss */
+/* line 135, ../../../_sass/layout/_typography.scss */
 ul ul, ul ol,
 ol ol, ol ul {
   margin: 0 0 0 1.2rem;
   font-size: 20px;
 }
 
-/* line 140, ../../../_sass/layout/_typography.scss */
+/* line 141, ../../../_sass/layout/_typography.scss */
 li {
   line-height: 1.2;
   margin-bottom: 0;
@@ -793,13 +793,13 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  background: #E8E8E8;
+  background: #3fd5ae;
   /* Old browsers */
-  border: 1px solid #E8E8E8;
+  border: 1px solid #3fd5ae;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  color: #262729;
+  color: #E8E8E8;
   display: inline-block;
   font-weight: 700;
   text-decoration: none;
@@ -817,9 +817,9 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
   color: #E8E8E8;
-  background: #3fd5ae;
+  background: #262729;
   /* Old browsers */
-  border: 1px solid #3fd5ae;
+  border: 1px solid #262729;
 }
 
 /* line 32, ../../../_sass/elements/_buttons.scss */
@@ -828,9 +828,9 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-  background: #3fd5ae;
+  background: #262729;
   /* Old browsers */
-  border: 1px solid #3fd5ae;
+  border: 1px solid #262729;
 }
 
 /* line 41, ../../../_sass/elements/_buttons.scss */
@@ -865,6 +865,7 @@ input::-moz-focus-inner {
   line-height: 1.1;
   text-transform: uppercase;
   font-weight: 400;
+  margin-bottom: 0;
 }
 /* line 14, ../../../_sass/layout/_layout.scss */
 .main-header h1 a {
@@ -982,14 +983,18 @@ label span {
     float: left;
   }
 
-  /* line 98, ../../../_sass/layout/_layout.scss */
-  .main-nav {
-    width: 30%;
-    float: left;
-    text-align: right;
+  /* line 99, ../../../_sass/layout/_layout.scss */
+  .main-nav a {
+    text-decoration: none;
+    color: #3fd5ae;
+    margin-right: 0.4rem;
+  }
+  /* line 103, ../../../_sass/layout/_layout.scss */
+  .main-nav a:hover {
+    color: #262729;
   }
 
-  /* line 105, ../../../_sass/layout/_layout.scss */
+  /* line 109, ../../../_sass/layout/_layout.scss */
   .two-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1001,7 +1006,7 @@ label span {
     float: left;
   }
 
-  /* line 110, ../../../_sass/layout/_layout.scss */
+  /* line 114, ../../../_sass/layout/_layout.scss */
   .three-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1014,13 +1019,13 @@ label span {
   }
 }
 @media only screen and (min-width: 921px) {
-  /* line 120, ../../../_sass/layout/_layout.scss */
+  /* line 124, ../../../_sass/layout/_layout.scss */
   .wrapper {
     max-width: 48rem;
     padding: 1.2rem;
   }
 
-  /* line 124, ../../../_sass/layout/_layout.scss */
+  /* line 128, ../../../_sass/layout/_layout.scss */
   .two-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1031,7 +1036,7 @@ label span {
     padding-right: 0.6rem;
   }
 
-  /* line 127, ../../../_sass/layout/_layout.scss */
+  /* line 131, ../../../_sass/layout/_layout.scss */
   .three-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1042,7 +1047,7 @@ label span {
     padding-right: 0.6rem;
   }
 
-  /* line 130, ../../../_sass/layout/_layout.scss */
+  /* line 134, ../../../_sass/layout/_layout.scss */
   .four-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1054,7 +1059,7 @@ label span {
     float: left;
   }
 
-  /* line 134, ../../../_sass/layout/_layout.scss */
+  /* line 138, ../../../_sass/layout/_layout.scss */
   .how-we-do-it .four-columns {
     height: 21rem;
   }

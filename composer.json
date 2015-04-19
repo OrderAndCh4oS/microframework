@@ -2,8 +2,11 @@
     "name": "tam/slim",
     "description": "three&me slim implementation",
     "require": {
+        "slim/slim": "~2.5",
         "slim/views": "dev-master",
-        "twig/twig": "~1.18"
+        "twig/twig": "~1.18",
+        "doctrine/orm": "*",
+        "phpmailer/phpmailer": "dev-master"
     },
     "license": "NONE",
     "authors": [

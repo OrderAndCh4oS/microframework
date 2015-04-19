@@ -96,10 +96,14 @@ label span {
   }
 
   .main-nav {
-    width: 30%;
-    float: left;
-    text-align: right;
-    //margin-top: remCalc(37);
+    a {
+      text-decoration: none;
+      color: $teal;
+      margin-right: remCalc(8);
+      &:hover {
+        color: $black;
+      }
+    }
   }
 
   .two-columns {

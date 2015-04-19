@@ -1,5 +1,7 @@
 <?php
 
+	require_once __DIR__.'/../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+
 	class Email {
 
 		private $header_colour = '#000000';

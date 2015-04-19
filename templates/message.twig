@@ -1,0 +1,8 @@
+{% extends "base.twig" %}
+    {% block title %}{{ parent() }}&thinsp;&mdash;&thinsp;Message{% endblock %}
+
+    {% block body %}
+        <section  class="full-width">
+            <p>{{ flash.message }}</p>
+        </section>
+    {% endblock %}

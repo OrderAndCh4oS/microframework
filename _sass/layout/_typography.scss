@@ -8,13 +8,14 @@ h1,h2,h3,h4,h5,h6 {
   font-family: $base-font-family;
 }
 h1 {
-  font-size: $font-five;
+  font-size: $font-three;
 }
 h2 {
-  font-size: $font-four;
-}
-h3 {
   font-size: $font-two;
+}
+
+h3 {
+  font-size: $font-one;
 }
 h4, h5, h6 {
   font-size: $font-one;

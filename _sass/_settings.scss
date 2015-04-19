@@ -65,10 +65,10 @@ $form-font-size: $font-one;
 $form-width: 100%;
 
 $button-padding: remCalc(7) remCalc(10) remCalc(6);
-$button-color: $white;
-$button-border: 1px solid $white;
-$button-color-hover: $teal;
-$button-border-hover: 1px solid $teal;
+$button-color: $teal;
+$button-border: 1px solid $teal;
+$button-color-hover: $black;
+$button-border-hover: 1px solid $black;
 
 // set default radius
 $global-radius: 6px;
