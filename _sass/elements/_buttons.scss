@@ -1,0 +1,57 @@
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background: $button-color; /* Old browsers */
+  border: $button-border;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: $black;
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: $base-line-height;
+  padding: $button-padding;
+  font-family: $base-font-family;
+}
+
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  color: $white;
+  background: $button-color-hover; /* Old browsers */
+  border: $button-border-hover;
+}
+
+a.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  background: $button-color-hover; /* Old browsers */
+  border: $button-border-hover;
+}
+
+a.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

@@ -1,0 +1,137 @@
+
+.wrapper {
+  padding: $column-gutter;
+  background-color: $tertiary-color;
+}
+
+.main-header {
+  h1 {
+    font-size: $font-three;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: $font-weight-normal;
+    margin-bottom: 0;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.main-nav {
+  padding-bottom: $column-gutter;
+}
+
+.main-logo {
+  display: block;
+  width: remCalc(130);
+  @include svg-bg-link('logo');
+}
+
+.headings {
+  font-size: $font-two;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  color: $secondary-color;
+}
+
+.full-width, .main-footer {
+  margin-bottom: $column-gutter;
+}
+
+.main-post {
+  margin-bottom: $column-gutter;
+}
+
+.footer-button {
+  font-size: $font-two;
+  margin-bottom: $column-gutter*2;
+}
+
+.social-media-content {
+  margin-top: $column-gutter;
+}
+
+label {
+  padding-bottom: remCalc(7);
+}
+
+label span {
+  color: $teal;
+}
+
+.main-footer {
+  p {
+    font-weight: $font-weight-normal;
+    font-size: remCalc(ms(-2));
+    line-height: 1.4;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      color: $teal;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .wrapper {
+    width: 100%;
+    max-width: remCalc($medium);
+    margin: 0 auto;
+  }
+
+  .container {
+    @include container();
+  }
+
+  .full-width, .main-footer {
+    margin-bottom: $column-gutter;
+    @include span(12);
+  }
+
+  .main-header {
+    width: 70%;
+    float: left;
+  }
+
+  .main-nav {
+    width: 30%;
+    float: left;
+    text-align: right;
+    //margin-top: remCalc(37);
+  }
+
+  .two-columns {
+    @include span(12 of 12);
+    float: left;
+  }
+
+  .three-columns {
+    @include span(6 of 12);
+    float: left;
+  }
+
+
+
+}
+
+@media #{$large-up} {
+  .wrapper {
+    max-width: remCalc($large);
+    padding: $column-gutter;
+  }
+  .two-columns {
+    @include span(12 of 12);
+  }
+  .three-columns {
+    @include span(4 of 12);
+  }
+  .four-columns {
+    @include span(3 of 12);
+    float: left;
+  }
+  .how-we-do-it .four-columns {
+    height: remCalc(420);
+  }
+}

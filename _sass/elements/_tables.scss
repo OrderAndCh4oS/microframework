@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin: 0 0 $column-gutter;
+}
+th {
+  text-align: left;
+  font-size: $font-one;
+  border: $border;
+}
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: $secondary-color;
+}
+tr:nth-child(even) td:nth-child(odd) {
+  background-color: $tertiary-color;
+}
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: $tertiary-color;
+}
+tr:nth-child(even) td:nth-child(even) {
+  background-color: $secondary-color;
+}
+td,th {
+  padding: $half-column-gutter $column-gutter;
+  border: $border;
+}
+td {
+  text-align: left;
+  font-size: $font-one;
+}

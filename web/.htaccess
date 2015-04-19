@@ -1,0 +1,34 @@
+##TEMP MAINTENANCE PAGE
+#<IfModule mod_rewrite.c>
+#     RewriteEngine On
+#
+#     # local ip
+#     RewriteCond %{REMOTE_ADDR} !^213.105.152.115
+#
+#     # server ip
+#     RewriteCond %{REMOTE_ADDR} !^5.153.253.4
+#
+#     # w3c validation
+#     # RewriteCond %{REMOTE_ADDR} !^128.30.52.
+#
+#     # maintenance page and assets
+#     RewriteCond %{REQUEST_URI} !/maintenance [NC]
+#     RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif) [NC]
+#
+#     # serve default 503 response
+#     RewriteRule .* http://www.graphicdesignstudiolondon.co.uk/maintenance.php [R=503,L]
+#</IfModule>
+#
+## serve custom 503 response
+#ErrorDocument 503 /maintenance.php
+#
+#<IfModule mod_headers.c>
+#     # 3600 = 60 minutes
+#     # 86400 = 1 day
+#     # 604800 = 1 week
+#      Header always set Retry-After "86400"
+#</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

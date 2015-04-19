@@ -1,0 +1,94 @@
+form {
+}
+
+fieldset {
+  margin-bottom: $column-gutter;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="color"],
+textarea,
+select {
+  border: $form-border;
+  padding: $form-padding;
+  outline: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: $form-font-size;
+  font-family: $base-font-family;
+  font-weight: $font-weight-bold;
+  color: $black;
+  margin: 0 0 $column-gutter 0;
+  width: $form-width;
+  max-width: 100%;
+  display: block;
+  background: $white;
+}
+
+select {
+  padding: 0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  border: $form-border-focus;
+  color: $black;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+textarea {
+  min-height: 60px;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: bold;
+  font-size: $font-one;
+  margin: 0;
+}
+
+select {
+  width: $form-width;
+}
+
+label.inline {
+  display: inline;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-bottom: 0;
+}
+
+label span,
+legend span {
+  font-weight: normal;
+  font-size: $font-one;
+  color: $text-color-dark;
+}
+
+label.error {
+  margin-bottom: $column-gutter;
+}

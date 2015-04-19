@@ -1,0 +1,143 @@
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input {
+  margin-top: 0;
+  margin-bottom: $column-gutter;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: $header-color;
+  font-weight: $font-weight-bold;
+  font-family: $base-font-family;
+}
+h1 {
+  font-size: $font-five;
+}
+h2 {
+  font-size: $font-four;
+}
+h3 {
+  font-size: $font-two;
+}
+h4, h5, h6 {
+  font-size: $font-one;
+}
+p {
+  color: $text-color;
+  font-size: $font-one;
+  font-family: $base-font-family;
+}
+a, a:visited {
+  color: $link-color;
+  text-decoration: underline;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+menu,
+ol,
+ul {
+  padding: 0;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+}
+
+input {
+
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 0 0 $column-gutter;
+  padding: 0 $column-gutter;
+  border-left: 3px solid $secondary-color;
+}
+
+blockquote p:first-of-type:before {
+  content: "\201C";
+}
+blockquote p:last-of-type:after {
+  content: "\201D";
+}
+
+blockquote cite {
+  font-style: normal;
+  &:before {
+    content:"\2014\2009";
+  }
+}
+
+q {
+  font-style: italic;
+}
+
+hr {
+  border: solid $border-color;
+  border-width: 3px 0 0;
+  clear: both;
+  margin: 0 0 $column-gutter;
+  height: 0;
+}
+
+/* #Links
+  ================================================== */
+a, a:visited {
+  color: $link-color;
+  text-decoration: underline;
+  outline: 0;
+}
+
+a:hover, a:focus {
+  color: $link-hover-color;
+}
+
+p a, p a:visited {
+  line-height: inherit;
+}
+
+/* #Lists
+  ================================================== */
+ul, ol {
+  margin-bottom: $column-gutter;
+}
+
+ul {
+  list-style: none outside;
+  margin-bottom: $column-gutter*2;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul.square {
+  list-style: square outside;
+}
+
+ul.circle {
+  list-style: circle outside;
+}
+
+ul.disc {
+  list-style: disc outside;
+  margin-left: $column-gutter;
+  padding-left: $half-column-gutter;
+  font-size: $font-three;
+  font-weight: $font-weight-normal;
+}
+
+ul ul, ul ol,
+ol ol, ol ul {
+  margin: 0 0 0 $column-gutter;
+  font-size: $base-font-size;
+}
+
+li {
+  line-height: $base-line-height;
+  margin-bottom: 0;
+}

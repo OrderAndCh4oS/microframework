@@ -1,0 +1,26 @@
+{
+  "name": "starter-kit",
+  "version": "0.1.0",
+  "description": "three&me starter kit",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:threeandme/starter-kit.git"
+  },
+  "author": "Sean Cooper <sean@threeandme.co.uk>",
+  "license": "NONE",
+  "keywords": [
+    "three&me",
+    "Starter-Kit"
+  ],
+  "devDependencies": {
+      "grunt": "^0.4.4",
+      "grunt-contrib-jshint": "~0.4.x",
+      "jshint-stylish": "~0.1.5",
+      "grunt-contrib-watch": "~0.4.x",
+      "grunt-contrib-uglify": "~0.4.x",
+      "grunt-contrib-concat": "~0.4.x",
+      "matchdep": "*",
+      "grunt-newer": "^0.7.0"
+  }
+}

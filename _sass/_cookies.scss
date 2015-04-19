@@ -1,0 +1,40 @@
+#cookie-disclaimer {
+	padding:remCalc(10) 0;
+	background-color:$black;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	text-align:center;
+	border-top: $border;
+	z-index:1000;
+}
+#cookie-disclaimer p {
+  color:$white;
+  font-size: remCalc(16);
+  padding-bottom: 0;
+}
+#cookie-disclaimer p a {
+  color:$teal;
+  font-weight: $font-weight-bold;
+  text-decoration:none;
+}
+#cookie-disclaimer p a:hover{
+	text-decoration:underline;
+}
+.cookies-on {
+	font-weight:$font-weight-bold;
+	color:$teal;
+}
+
+.cookies-off {
+	font-weight:$font-weight-bold;
+	color:$white;
+}
+
+.close-cookie-bar {
+  @include svg-bg-link('close_cookie_bar');
+  width: remCalc(22);
+  height: remCalc(22);
+  margin-bottom: remCalc(-6);
+  display: inline-block;
+}

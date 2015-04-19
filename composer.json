@@ -1,0 +1,15 @@
+{
+    "name": "tam/slim",
+    "description": "three&me slim implementation",
+    "require": {
+        "slim/views": "dev-master",
+        "twig/twig": "~1.18"
+    },
+    "license": "NONE",
+    "authors": [
+        {
+            "name": "Sean Cooper",
+            "email": "sean@threeandme.co.uk"
+        }
+    ]
+}
