@@ -14,9 +14,11 @@ use helpers\helpers;
 
 		if ($app->request->isPost()) {
 			$newPageName =$_POST['name'];
+			$newPageSlug =$_POST['slug'];
 
 			$page = new Page();
 			$page->setName($newPageName);
+			$page->setSlug($newPageSlug, $entityManager);
 
 			$entityManager->persist($page);
 			$entityManager->flush();
