@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <section>
+            <div class="full-width">
+                <h2>Edit Page</h2>
+                <p>{{ flash.message }}</p>
+                <p>{{ name }}</p>
+                <form class="contact-us" id="contact_form" action="{{ currentUrl() }}" method="post" name="enquiry" novalidate="novalidate">
+                    <div class="form-field">
+                        <label for="name">Name<span>*</span></label>
+                        <input name="name" id="name" type="text" value="{{ content.name }}" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="slug">Slug<span>*</span></label>
+                        <input name="slug" id="slug" type="text" value="{{ content.slug }}" maxlength="100">
+                    </div>
+                    <input type="hidden" value="{{ content.id }}" name="id">
+                    <input class="button" name="submit" type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+    {% endblock %}

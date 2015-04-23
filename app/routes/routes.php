@@ -13,8 +13,8 @@ use helpers\helpers;
 	$app->map( '/add-page/', function () use ( $app, $entityManager ) {
 
 		if ($app->request->isPost()) {
-			$newPageName =$_POST['name'];
-			$newPageSlug =$_POST['slug'];
+			$newPageName = $_POST['name'];
+			$newPageSlug = $_POST['slug'];
 
 			$page = new Page();
 			$page->setName($newPageName);
@@ -37,8 +37,7 @@ use helpers\helpers;
 		$pages = $pageRepository->findAll();
 		$content = "<ul class=\"page-links\">";
 		foreach ($pages as $page) {
-			$page_slug = helpers\Helpers::slugify($page->getName());
-			$content .= '<li><a href="'.$app->urlFor($page_slug).'">'.$page->getName().'</a></li>';
+			$content .= '<li><a href="'.$app->urlFor($page->getId()).'">'.$page->getName().'</a></li>';
 		}
 		$content .= "</ul>";
 		$app->render('page.twig', array(
@@ -52,13 +51,31 @@ use helpers\helpers;
 
 	foreach ($pages as $page) {
 
-		$page_slug = helpers\Helpers::slugify($page->getName());
+		$app->map('/edit/'.$page->getId().'/', function () use ($app, $entityManager, $page) {
 
-		$app->get('/'.$page_slug.'/', function () use ($app, $page) {
-			$content = $page->getName();
-			$app->render('page.twig', array(
+			if ($app->request->isPost()) {
+				$name = $_POST['name'];
+				$slug = $_POST['slug'];
+				$id = $_POST['id'];
+
+				$page = $entityManager->find('Page', $id);
+				$page->setName($name);
+				$page->setSlug($slug, $entityManager);
+
+				$entityManager->flush();
+
+				$app->flash('message','Page Updated Successfully!');
+				$app->redirect($app->urlFor('message'));
+			}
+
+			$content = array(
+				'name' => $page->getName(),
+				'slug' => $page->getSlug(),
+				'id' => $page->getId()
+			);
+			$app->render('edit-page.twig', array(
 				'content' => $content
 			));
 
-		})->name($page_slug);
+		})->via('GET', 'POST')->name($page->getId());
 	}

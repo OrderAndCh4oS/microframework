@@ -38,22 +38,22 @@
 			return $this->slug;
 		}
 
-		public function setSlug($slug, $entityManager)
+		public function setSlug($slug)
 		{
+			global $entityManager;
 			$slug = helpers\Helpers::slugify($slug);
 			$unique = false;
 			$count = 0;
 			while ($unique == false) {
 				$pageRepository = $entityManager->getRepository('Page');
 				$has_slug = $pageRepository->findOneBy(array('slug' => $slug));
-				if (!$has_slug) {
+				if (!$has_slug || ($has_slug->id == $this->id)) {
 					$unique = true;
 				} else {
 					$count++;
 					$slug = $slug .'-'. $count;
 				}
 			}
-
 			$this->slug = $slug;
 		}
 	}
