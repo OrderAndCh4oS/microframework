@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Site Name{% endblock %}</title>
+    <title>{% block title %}{{ site_name }}{% endblock %}</title>
     <meta name="author" content="Sean Cooper">
     <meta name="Copyright" content="Copyright three&amp;me ltd 2014. All Rights Reserved.">
     <link rel="shortcut icon" href="{{ siteUrl('/assets/images/favicon.ico') }}">
@@ -39,7 +39,7 @@
     <div class="container">
         <div class="full-width clearfix">
             <header class="main-header">
-                <h1><a href="{{ baseUrl() }}">Site Name</a></h1>
+                <h1><a href="{{ baseUrl() }}">{{ site_name }}</a></h1>
             </header>
         </div>
         <div class="full-width">
