@@ -1,9 +1,9 @@
 <?php
-	require '../vendor/autoload.php';
-	require '../app/doctrine/bootstrap.php';
-	include_once '../app/helpers/helpers.php';
-	include_once '../app/email/email.php';
-	include_once '../src/Page.php';
+	require_once '../vendor/autoload.php';
+	require_once '../app/doctrine/bootstrap.php';
+	require_once '../app/helpers/helpers.php';
+	require_once '../app/email/email.php';
+	require_once '../src/Page.php';
 
 	$app = new \Slim\Slim(array(
 		'view' => new \Slim\Views\Twig(),
@@ -34,6 +34,10 @@
 		'cipher_mode' => MCRYPT_MODE_CBC
 	)));
 
-	require '../app/routes/routes.php';
+
+	require_once '../app/routes/routes.php';
+
+	require_once '../app/settings.php';
+	require_once '../app/cookies/cookies.php';
 
 	$app->run();

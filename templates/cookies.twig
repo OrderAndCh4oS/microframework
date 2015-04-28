@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <article class="full-width">
+            <div class="cookie-policy">
+                <h1>Cookie Policy</h1>
+                <p>We use Google Analytics to collect anonymous information about visitors to our site. This requires setting analytics cookies that track how visitors use our site.</p>
+                <p>The information collected includes the number of visitors to the site, where vistors have come to the site from and the pages they visited. We also collect data regarding demographics and interests including Age, Gender, and Interest reports. This allow us to better understand who are users are. This information is used to help us improve users experience of the site.</p>
+                <p><a href="http://www.google.com/analytics/learn/privacy.html">More about Google Analyitics</a></p>
+                <p>If you wish to, you can choose not to accept cookies from our site by turning them off below.</p>
+                <form action="{{ currentUrl() }}" method="post" name="no-cookies" class="mar-b">
+                    <input type="hidden" name="cookie-switch" value="{{ cookieMsg }}">
+                    <input type="submit" name="cookie-submit" class="button" value="{{ cookieMsg }}">
+                </form>
+            </div>
+        </article>
+    {% endblock %}

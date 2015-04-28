@@ -51,6 +51,7 @@
 					$unique = true;
 				} else {
 					$count++;
+					$slug = preg_replace('/(-\d$)/', '', $slug);
 					$slug = $slug .'-'. $count;
 				}
 			}
