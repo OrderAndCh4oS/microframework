@@ -1,6 +1,6 @@
 <?php
 
-	require_once __DIR__.'/../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+	require_once __DIR__.'/../../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 	class Email {
 

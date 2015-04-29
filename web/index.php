@@ -1,9 +1,13 @@
 <?php
 	require_once '../vendor/autoload.php';
 	require_once '../app/doctrine/bootstrap.php';
-	require_once '../app/helpers/helpers.php';
-	require_once '../app/email/email.php';
+	require_once '../app/functions/helpers/helpers.php';
+	require_once '../app/functions/email/email.php';
+	require_once '../app/functions/csrf/csrf.php';
 	require_once '../src/Page.php';
+
+	session_cache_limiter(false);
+	session_start();
 
 	$app = new \Slim\Slim(array(
 		'view' => new \Slim\Views\Twig(),
@@ -11,6 +15,9 @@
 	));
 
 	$view = $app->view();
+	require_once '../app/settings.php';
+
+
 	$view->setTemplatesDirectory( './../templates' );
 	$view->parserOptions = array(
 		'debug' => true,
@@ -33,11 +40,8 @@
 		'cipher' => MCRYPT_RIJNDAEL_256,
 		'cipher_mode' => MCRYPT_MODE_CBC
 	)));
-
-
 	require_once '../app/routes/routes.php';
 
-	require_once '../app/settings.php';
-	require_once '../app/cookies/cookies.php';
+	require_once '../app/functions/cookies/cookies.php';
 
 	$app->run();

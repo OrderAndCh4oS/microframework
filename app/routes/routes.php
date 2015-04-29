@@ -12,22 +12,26 @@ use helpers\helpers;
 
 	$app->map( '/add-page/', function () use ( $app, $entityManager ) {
 
+
 		if ($app->request->isPost()) {
 			$newPageName = $_POST['name'];
 			$newPageSlug = $_POST['slug'];
 
-			$page = new Page();
-			$page->setName($newPageName);
-			$page->setSlug($newPageSlug, $entityManager);
+			if (CSRF::check($_POST['csrf'])) {
+				$page = new Page();
+				$page->setName($newPageName);
+				$page->setSlug($newPageSlug, $entityManager);
 
-			$entityManager->persist($page);
-			$entityManager->flush();
+				$entityManager->persist($page);
+				$entityManager->flush();
 
-			$app->flash('message','Page Added Successfully!');
-			$app->redirect($app->urlFor('message'));
+				$app->flash('message','Page Added Successfully!');
+				$app->redirect($app->urlFor('message'));
+			}
 		}
-
-		$app->render( 'add-page.twig' );
+		$app->render('add-page.twig', array(
+			'csrf' => CSRF::generate()
+		));
 	})->via('GET', 'POST');
 
 
@@ -58,14 +62,17 @@ use helpers\helpers;
 				$slug = $_POST['slug'];
 				$id = $_POST['id'];
 
-				$page = $entityManager->find('Page', $id);
-				$page->setName($name);
-				$page->setSlug($slug, $entityManager);
+				if (CSRF::check($_POST['csrf'])) {
 
-				$entityManager->flush();
+					$page = $entityManager->find('Page', $id);
+					$page->setName($name);
+					$page->setSlug($slug, $entityManager);
 
-				$app->flash('message','Page Updated Successfully!');
-				$app->redirect($app->urlFor('message'));
+					$entityManager->flush();
+
+					$app->flash('message', 'Page Updated Successfully!');
+					$app->redirect($app->urlFor('message'));
+				}
 			}
 
 			$content = array(
@@ -74,7 +81,8 @@ use helpers\helpers;
 				'id' => $page->getId()
 			);
 			$app->render('edit-page.twig', array(
-				'content' => $content
+				'content' => $content,
+				'csrf' => CSRF::generate()
 			));
 
 		})->via('GET', 'POST')->name($page->getId());
