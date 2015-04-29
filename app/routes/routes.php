@@ -60,7 +60,7 @@
 				$slug = $_POST['slug'];
 				$id = $_POST['id'];
 
-				if (CSRF::check($_POST['csrf'])) {
+				if ( functions\csrf\CSRF::check($_POST['csrf'])) {
 
 					$page = $entityManager->find('Page', $id);
 					$page->setName($name);
@@ -80,7 +80,7 @@
 			);
 			$app->render('edit-page.twig', array(
 				'content' => $content,
-				'csrf' => CSRF::generate()
+				'csrf' =>  functions\csrf\CSRF::generate()
 			));
 
 		})->via('GET', 'POST')->name($page->getId());
