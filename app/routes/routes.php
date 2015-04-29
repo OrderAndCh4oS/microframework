@@ -1,5 +1,4 @@
 <?php
-use helpers\helpers;
 
 	$app->get( '/', function () use ( $app ) {
 		$app->render( 'home.twig' );
@@ -12,12 +11,11 @@ use helpers\helpers;
 
 	$app->map( '/add-page/', function () use ( $app, $entityManager ) {
 
-
 		if ($app->request->isPost()) {
 			$newPageName = $_POST['name'];
 			$newPageSlug = $_POST['slug'];
 
-			if (CSRF::check($_POST['csrf'])) {
+			if (functions\csrf\CSRF::check($_POST['csrf'])) {
 				$page = new Page();
 				$page->setName($newPageName);
 				$page->setSlug($newPageSlug, $entityManager);
@@ -30,7 +28,7 @@ use helpers\helpers;
 			}
 		}
 		$app->render('add-page.twig', array(
-			'csrf' => CSRF::generate()
+			'csrf' => functions\csrf\CSRF::generate()
 		));
 	})->via('GET', 'POST');
 

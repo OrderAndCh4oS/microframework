@@ -1,4 +1,5 @@
 <?php
+namespace functions\csrf;
 
 	class CSRF {
 
