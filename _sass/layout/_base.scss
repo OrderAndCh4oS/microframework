@@ -11,7 +11,7 @@ html, body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: $text-color;
-  background-color: $secondary-color;
+  background-color: $body-bk-color;
 }
 
 body {
@@ -264,7 +264,7 @@ form {
  */
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid $border-color;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }

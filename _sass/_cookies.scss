@@ -1,6 +1,6 @@
 #cookie-disclaimer {
 	padding:remCalc(10) 0;
-	background-color:$black;
+	background-color:$cookie-bar-bk-color;
 	position:fixed;
 	bottom:0;
 	width:100%;
@@ -9,12 +9,12 @@
 	z-index:1000;
 }
 #cookie-disclaimer p {
-  color:$white;
+  color:$cookie-bar-color;
   font-size: remCalc(16);
   padding-bottom: 0;
 }
 #cookie-disclaimer p a {
-  color:$teal;
+  color:$cookie-bar-link-color;
   font-weight: $font-weight-bold;
   text-decoration:none;
 }
@@ -23,12 +23,12 @@
 }
 .cookies-on {
 	font-weight:$font-weight-bold;
-	color:$teal;
+	color: $cookies-on-color;
 }
 
 .cookies-off {
 	font-weight:$font-weight-bold;
-	color:$white;
+	color: $cookies-off-color;
 }
 
 .close-cookie-bar {

@@ -1,7 +1,6 @@
 <?php
 
 	if (!isset($_COOKIE['a-ok-cookie']) && !isset($_COOKIE['no-cookies-cookie'])) {
-		$app->setCookie('a-ok-cookie', true, '5 years');
 		$view->setData('cookies', 'yep');
 	} elseif (isset($_COOKIE['a-ok-cookie']) && !isset($_COOKIE['no-cookies-cookie'])) {
 		$view->setData('cookies', 'yep');

@@ -8,16 +8,16 @@ th {
   border: $border;
 }
 tr:nth-child(odd) td:nth-child(odd) {
-  background-color: $secondary-color;
+  background-color: $white;
 }
 tr:nth-child(even) td:nth-child(odd) {
-  background-color: $tertiary-color;
+  background-color: $white;
 }
 tr:nth-child(odd) td:nth-child(even) {
-  background-color: $tertiary-color;
+  background-color: $white;
 }
 tr:nth-child(even) td:nth-child(even) {
-  background-color: $secondary-color;
+  background-color: $white;
 }
 td,th {
   padding: $half-column-gutter $column-gutter;

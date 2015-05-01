@@ -1,3 +1,27 @@
+/**
+* Nav Settings
+*/
+/**
+* Font Colour Settings
+*/
+/**
+* Font Settings
+*/
+/**
+* Form Settings
+*/
+/**
+* Button Settings
+*/
+/**
+* Radius Settings
+*/
+/**
+* Cookie Bar Settings
+*/
+/**
+* Selection Settings
+*/
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
@@ -287,7 +311,7 @@ form {
  */
 /* line 266, ../../../_sass/layout/_base.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid #262729;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -828,7 +852,7 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-  background: #262729;
+  background: #E8E8E8;
   /* Old browsers */
   border: 1px solid #262729;
 }
@@ -877,7 +901,22 @@ input::-moz-focus-inner {
   padding-bottom: 1.2rem;
 }
 
-/* line 24, ../../../_sass/layout/_layout.scss */
+/* line 25, ../../../_sass/layout/_layout.scss */
+.main-nav a {
+  display: block;
+  background-color: #E8E8E8;
+  border-bottom: 1px solid #3fd5ae;
+  padding: 0.6rem 0;
+  text-decoration: none;
+  color: #3fd5ae;
+  margin-right: 0.4rem;
+}
+/* line 33, ../../../_sass/layout/_layout.scss */
+.main-nav a:hover {
+  color: #262729;
+}
+
+/* line 39, ../../../_sass/layout/_layout.scss */
 .main-logo {
   display: block;
   width: 6.5rem;
@@ -889,7 +928,7 @@ input::-moz-focus-inner {
   background-position: bottom center;
 }
 
-/* line 30, ../../../_sass/layout/_layout.scss */
+/* line 45, ../../../_sass/layout/_layout.scss */
 .headings {
   font-size: 1.3rem;
   font-weight: normal;
@@ -898,74 +937,74 @@ input::-moz-focus-inner {
   color: #E8E8E8;
 }
 
-/* line 38, ../../../_sass/layout/_layout.scss */
+/* line 53, ../../../_sass/layout/_layout.scss */
 .full-width, .main-footer {
   margin-bottom: 1.2rem;
 }
 
-/* line 42, ../../../_sass/layout/_layout.scss */
+/* line 57, ../../../_sass/layout/_layout.scss */
 .main-post {
   margin-bottom: 1.2rem;
 }
 
-/* line 46, ../../../_sass/layout/_layout.scss */
+/* line 61, ../../../_sass/layout/_layout.scss */
 .footer-button {
   font-size: 1.3rem;
   margin-bottom: 2.4rem;
 }
 
-/* line 51, ../../../_sass/layout/_layout.scss */
+/* line 66, ../../../_sass/layout/_layout.scss */
 .social-media-content {
   margin-top: 1.2rem;
 }
 
-/* line 55, ../../../_sass/layout/_layout.scss */
+/* line 70, ../../../_sass/layout/_layout.scss */
 label {
   padding-bottom: 0.35rem;
 }
 
-/* line 59, ../../../_sass/layout/_layout.scss */
+/* line 74, ../../../_sass/layout/_layout.scss */
 label span {
   color: #3fd5ae;
 }
 
-/* line 64, ../../../_sass/layout/_layout.scss */
+/* line 79, ../../../_sass/layout/_layout.scss */
 .main-footer p {
   font-weight: 400;
   font-size: 0.6rem;
   line-height: 1.4;
 }
-/* line 69, ../../../_sass/layout/_layout.scss */
+/* line 84, ../../../_sass/layout/_layout.scss */
 .main-footer a {
   text-decoration: none;
 }
-/* line 71, ../../../_sass/layout/_layout.scss */
+/* line 86, ../../../_sass/layout/_layout.scss */
 .main-footer a:hover {
   color: #3fd5ae;
 }
 
 @media only screen and (min-width: 680px) {
-  /* line 78, ../../../_sass/layout/_layout.scss */
+  /* line 93, ../../../_sass/layout/_layout.scss */
   .wrapper {
     width: 100%;
     max-width: 46rem;
     margin: 0 auto;
   }
 
-  /* line 84, ../../../_sass/layout/_layout.scss */
+  /* line 99, ../../../_sass/layout/_layout.scss */
   .container {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 12, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+  /* line 12, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
   .container:after {
     content: " ";
     display: block;
     clear: both;
   }
 
-  /* line 88, ../../../_sass/layout/_layout.scss */
+  /* line 103, ../../../_sass/layout/_layout.scss */
   .full-width, .main-footer {
     margin-bottom: 1.2rem;
     -moz-box-sizing: border-box;
@@ -977,24 +1016,27 @@ label span {
     padding-right: 0.6rem;
   }
 
-  /* line 93, ../../../_sass/layout/_layout.scss */
+  /* line 108, ../../../_sass/layout/_layout.scss */
   .main-header {
     width: 70%;
     float: left;
   }
 
-  /* line 99, ../../../_sass/layout/_layout.scss */
+  /* line 114, ../../../_sass/layout/_layout.scss */
   .main-nav a {
+    display: inline-block;
+    border-bottom: none;
+    background-color: transparent;
     text-decoration: none;
     color: #3fd5ae;
     margin-right: 0.4rem;
   }
-  /* line 103, ../../../_sass/layout/_layout.scss */
+  /* line 121, ../../../_sass/layout/_layout.scss */
   .main-nav a:hover {
     color: #262729;
   }
 
-  /* line 109, ../../../_sass/layout/_layout.scss */
+  /* line 127, ../../../_sass/layout/_layout.scss */
   .two-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1006,7 +1048,7 @@ label span {
     float: left;
   }
 
-  /* line 114, ../../../_sass/layout/_layout.scss */
+  /* line 132, ../../../_sass/layout/_layout.scss */
   .three-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1019,13 +1061,13 @@ label span {
   }
 }
 @media only screen and (min-width: 921px) {
-  /* line 124, ../../../_sass/layout/_layout.scss */
+  /* line 142, ../../../_sass/layout/_layout.scss */
   .wrapper {
     max-width: 48rem;
     padding: 1.2rem;
   }
 
-  /* line 128, ../../../_sass/layout/_layout.scss */
+  /* line 146, ../../../_sass/layout/_layout.scss */
   .two-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1036,7 +1078,7 @@ label span {
     padding-right: 0.6rem;
   }
 
-  /* line 131, ../../../_sass/layout/_layout.scss */
+  /* line 149, ../../../_sass/layout/_layout.scss */
   .three-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1047,7 +1089,7 @@ label span {
     padding-right: 0.6rem;
   }
 
-  /* line 134, ../../../_sass/layout/_layout.scss */
+  /* line 152, ../../../_sass/layout/_layout.scss */
   .four-columns {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1059,7 +1101,7 @@ label span {
     float: left;
   }
 
-  /* line 138, ../../../_sass/layout/_layout.scss */
+  /* line 156, ../../../_sass/layout/_layout.scss */
   .how-we-do-it .four-columns {
     height: 21rem;
   }
@@ -1104,7 +1146,7 @@ label span {
 /* line 29, ../../../_sass/_cookies.scss */
 .cookies-off {
   font-weight: 700;
-  color: #E8E8E8;
+  color: #262729;
 }
 
 /* line 34, ../../../_sass/_cookies.scss */
@@ -1132,56 +1174,21 @@ label span {
 }
 
 /* line 10, ../../../_sass/elements/_helpers.scss */
-.color-primary {
+.text-color {
   color: #262729;
 }
 
 /* line 14, ../../../_sass/elements/_helpers.scss */
-.color-secondary {
-  color: #E8E8E8;
-}
-
-/* line 18, ../../../_sass/elements/_helpers.scss */
-.color-tertiary {
-  color: #E8E8E8;
-}
-
-/* line 22, ../../../_sass/elements/_helpers.scss */
-.color-text {
-  color: #262729;
-}
-
-/* line 26, ../../../_sass/elements/_helpers.scss */
 .full-width {
   width: 100%;
 }
 
-/* line 30, ../../../_sass/elements/_helpers.scss */
-.bc-primary {
-  background-color: #262729;
-}
-
-/* line 34, ../../../_sass/elements/_helpers.scss */
-.bc-secondary {
-  background-color: #E8E8E8;
-}
-
-/* line 38, ../../../_sass/elements/_helpers.scss */
-.bc-tertiary {
-  background-color: #E8E8E8;
-}
-
-/* line 42, ../../../_sass/elements/_helpers.scss */
-.bc-text {
-  background-color: #262729;
-}
-
-/* line 46, ../../../_sass/elements/_helpers.scss */
+/* line 18, ../../../_sass/elements/_helpers.scss */
 .margin-none {
   margin-bottom: 0;
 }
 
-/* line 50, ../../../_sass/elements/_helpers.scss */
+/* line 22, ../../../_sass/elements/_helpers.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
@@ -1189,7 +1196,7 @@ label span {
   padding: 0.2em 0;
 }
 
-/* line 57, ../../../_sass/elements/_helpers.scss */
+/* line 29, ../../../_sass/elements/_helpers.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -1198,7 +1205,7 @@ label span {
   *text-indent: 100%;
 }
 
-/* line 65, ../../../_sass/elements/_helpers.scss */
+/* line 37, ../../../_sass/elements/_helpers.scss */
 .ir:before {
   content: "";
   display: block;
@@ -1206,13 +1213,13 @@ label span {
   height: 150%;
 }
 
-/* line 72, ../../../_sass/elements/_helpers.scss */
+/* line 44, ../../../_sass/elements/_helpers.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 77, ../../../_sass/elements/_helpers.scss */
+/* line 49, ../../../_sass/elements/_helpers.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1224,7 +1231,7 @@ label span {
   width: 1px;
 }
 
-/* line 88, ../../../_sass/elements/_helpers.scss */
+/* line 60, ../../../_sass/elements/_helpers.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1235,24 +1242,24 @@ label span {
   width: auto;
 }
 
-/* line 98, ../../../_sass/elements/_helpers.scss */
+/* line 70, ../../../_sass/elements/_helpers.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 102, ../../../_sass/elements/_helpers.scss */
+/* line 74, ../../../_sass/elements/_helpers.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 108, ../../../_sass/elements/_helpers.scss */
+/* line 80, ../../../_sass/elements/_helpers.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 112, ../../../_sass/elements/_helpers.scss */
+/* line 84, ../../../_sass/elements/_helpers.scss */
 .clearfix {
   *zoom: 1;
 }

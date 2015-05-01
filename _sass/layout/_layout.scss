@@ -1,7 +1,7 @@
 
 .wrapper {
   padding: $column-gutter;
-  background-color: $tertiary-color;
+  background-color: $wrapper-bk-color;
 }
 
 .main-header {
@@ -21,6 +21,21 @@
   padding-bottom: $column-gutter;
 }
 
+.main-nav {
+  a {
+    display: block;
+    background-color: $nav-bk-color;
+    border-bottom: $nav-border;
+    padding: $nav-padding;
+    text-decoration: none;
+    color: $teal;
+    margin-right: remCalc(8);
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
 .main-logo {
   display: block;
   width: remCalc(130);
@@ -32,7 +47,7 @@
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: .25em;
-  color: $secondary-color;
+  color: $white;
 }
 
 .full-width, .main-footer {
@@ -97,11 +112,14 @@ label span {
 
   .main-nav {
     a {
+      display: inline-block;
+      border-bottom: none;
+      background-color: transparent;
       text-decoration: none;
-      color: $teal;
+      color: $nav-color;
       margin-right: remCalc(8);
       &:hover {
-        color: $black;
+        color: $nav-color-hover;
       }
     }
   }

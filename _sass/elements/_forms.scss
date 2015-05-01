@@ -26,7 +26,7 @@ select {
   font-size: $form-font-size;
   font-family: $base-font-family;
   font-weight: $font-weight-bold;
-  color: $black;
+  color: $input-color;
   margin: 0 0 $column-gutter 0;
   width: $form-width;
   max-width: 100%;
@@ -50,7 +50,7 @@ input[type="time"]:focus,
 input[type="color"]:focus,
 textarea:focus {
   border: $form-border-focus;
-  color: $black;
+  color: $input-focus-color;
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
   box-shadow: 0 0 3px rgba(0, 0, 0, .2);
@@ -86,7 +86,7 @@ label span,
 legend span {
   font-weight: normal;
   font-size: $font-one;
-  color: $text-color-dark;
+  color: $text-color;
 }
 
 label.error {

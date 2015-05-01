@@ -20,23 +20,33 @@ $white: #E8E8E8;
 $black: #262729;
 $teal: #3fd5ae;
 
-$primary-color: $black;
-$secondary-color: $white;
-$tertiary-color: $white;
+$body-bk-color: $white;
+$wrapper-bk-color: $white;
 
 $header-color: $teal;
 $link-color: $black;
-$link-hover-color: $primary-color;
-$border-color: $primary-color;
+$link-hover-color: $black;
+$border-color: $black;
 
-$text-color-light: $teal;
+
+/**
+* Nav Settings
+*/
+$nav-color: $teal;
+$nav-color-hover: $black;
+$nav-bk-color: $white;
+$nav-padding: $half-column-gutter 0 ;
+$nav-border: 1px solid $teal;
+$nav-border-color:$teal;
+
+/**
+* Font Colour Settings
+*/
 $text-color: $black;
-$text-color-dark: $black;
 
-
-$selection-background-color: $teal;
-$selection-color: $white;
-
+/**
+* Font Settings
+*/
 $base-font-family: "Univers W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $font-weight-normal: 400;
@@ -58,20 +68,50 @@ $font-twelve: remCalc(ms(11));
 
 $border: 3px solid $border-color;
 
+/**
+* Form Settings
+*/
+$input-color: $black;
+$input-focus-color: $black;
+$input-bk-color: $white;
+$input-focus-bk-color: $white;
 $form-padding: remCalc(4) remCalc(6);
-$form-border: 1px solid $primary-color;
-$form-border-focus: 1px solid $secondary-color;
+$form-border: 1px solid $black;
+$form-border-focus: 1px solid $white;
 $form-font-size: $font-one;
 $form-width: 100%;
 
+/**
+* Button Settings
+*/
 $button-padding: remCalc(7) remCalc(10) remCalc(6);
-$button-color: $teal;
+$button-color: $white;
+$button-bk-color: $teal;
 $button-border: 1px solid $teal;
-$button-color-hover: $black;
+$button-color-hover: $white;
+$button-bk-color-hover: $black;
 $button-border-hover: 1px solid $black;
 
-// set default radius
+/**
+* Radius Settings
+*/
 $global-radius: 6px;
+
+
+/**
+* Cookie Bar Settings
+*/
+$cookie-bar-bk-color: $black;
+$cookie-bar-color: $white;
+$cookie-bar-link-color: $teal;
+$cookies-on-color: $teal;
+$cookies-off-color: $black;
+
+/**
+* Selection Settings
+*/
+$selection-background-color: $teal;
+$selection-color: $white;
 
 // Media Query Ranges
 

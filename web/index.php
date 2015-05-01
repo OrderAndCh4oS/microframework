@@ -1,9 +1,9 @@
 <?php
 	require_once '../vendor/autoload.php';
 	require_once '../app/doctrine/bootstrap.php';
-	require_once '../app/functions/helpers/helpers.php';
-	require_once '../app/functions/email/email.php';
-	require_once '../app/functions/csrf/csrf.php';
+	require_once '../app/functions/helpers.php';
+	require_once '../app/functions/email.php';
+	require_once '../app/functions/csrf.php';
 	require_once '../src/Page.php';
 
 	session_cache_limiter(false);
@@ -42,6 +42,6 @@
 	)));
 	require_once '../app/routes/routes.php';
 
-	require_once '../app/functions/cookies/cookies.php';
+	require_once '../app/functions/cookies.php';
 
 	$app->run();
