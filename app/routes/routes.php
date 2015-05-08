@@ -12,13 +12,17 @@
 	$app->map( '/add-page/', function () use ( $app, $entityManager ) {
 
 		if ($app->request->isPost()) {
-			$newPageName = $_POST['name'];
-			$newPageSlug = $_POST['slug'];
+			$name = $_POST['name'];
+			$slug = $_POST['slug'];
+			$content = $_POST['content'];
+			$excerpt = $_POST['excerpt'];
 
-			if (functions\csrf\CSRF::check($_POST['csrf'])) {
+			if (functions\CSRF::check($_POST['csrf'])) {
 				$page = new Page();
-				$page->setName($newPageName);
-				$page->setSlug($newPageSlug, $entityManager);
+				$page->setName($name);
+				$page->setSlug($slug, $entityManager);
+				$page->setContent($content);
+				$page->setExcerpt($excerpt);
 
 				$entityManager->persist($page);
 				$entityManager->flush();
@@ -28,7 +32,7 @@
 			}
 		}
 		$app->render('add-page.twig', array(
-			'csrf' => functions\csrf\CSRF::generate()
+			'csrf' => functions\CSRF::generate()
 		));
 	})->via('GET', 'POST');
 
@@ -37,51 +41,91 @@
 
 		$pageRepository = $entityManager->getRepository('Page');
 		$pages = $pageRepository->findAll();
-		$content = "<ul class=\"page-links\">";
+		$content = "<table>";
 		foreach ($pages as $page) {
-			$content .= '<li><a href="'.$app->urlFor($page->getId()).'">'.$page->getName().'</a></li>';
+			$content .= '<tr>';
+			$content .= '<td><a href="'.$app->urlFor('view', array('slug' => $page->getSlug())).'">'.$page->getName().'</a></td>';
+			$content .= '<td><a href="'.$app->urlFor('edit', array('id' => $page->getId())).'">Edit Page</a></td>';
+			$content .= '<td><a href="'.$app->urlFor('delete', array('id' => $page->getId())).'">Delete Page</a></td>';
+			$content .= '</tr>';
 		}
-		$content .= "</ul>";
+		$content .= "</table>";
 		$app->render('page.twig', array(
 			'content' => $content
 		));
 	})->name('list-pages');
 
 	# Add routes for all pages.
-	$pageRepository = $entityManager->getRepository('Page');
-	$pages = $pageRepository->findAll();
 
-	foreach ($pages as $page) {
+	$app->get('/view/:slug/', function ($slug) use ($app, $entityManager) {
+		$pageRepository = $entityManager->getRepository('Page');
+		$page = $pageRepository->findOneBy(array(
+			'slug' => $slug
+		));
 
-		$app->map('/edit/'.$page->getId().'/', function () use ($app, $entityManager, $page) {
+		$app->render('view-page.twig', array(
+			'name' => $page->getName(),
+			'content' => $page->getContent()
+		));
+	})->name('view');
 
-			if ($app->request->isPost()) {
-				$name = $_POST['name'];
-				$slug = $_POST['slug'];
-				$id = $_POST['id'];
 
-				if ( functions\csrf\CSRF::check($_POST['csrf'])) {
+	$app->map('/edit/:id/', function ($id) use ($app, $entityManager) {
+		$page = $entityManager->find('Page', $id);
 
+		if ($app->request->isPost()) {
+			$name = $_POST['name'];
+			$slug = $_POST['slug'];
+			$content = $_POST['content'];
+			$excerpt = $_POST['excerpt'];
+
+			if (functions\CSRF::check($_POST['csrf'])) {
+				$page->setName($name);
+				$page->setSlug($slug, $entityManager);
+				$page->setContent($content);
+				$page->setExcerpt($excerpt);
+
+				$entityManager->persist($page);
+				$entityManager->flush();
+
+				$app->flash('message','Page Added Successfully!');
+				$app->redirect($app->urlFor('message'));
+			}
+		}
+
+		$content = array(
+			'name' => $page->getName(),
+			'slug' => $page->getSlug(),
+			'content' => $page->getContent(),
+			'excerpt' => $page->getExcerpt(),
+			'id' => $page->getId()
+		);
+		$app->render('edit-page.twig', array(
+			'content' => $content,
+			'csrf' =>  functions\CSRF::generate()
+		));
+
+	})->via('GET', 'POST')->name('edit')->conditions(array('id' => '\d+'));
+
+	$app->map('/delete/:id/', function ($id) use ($app, $entityManager) {
+
+		if ($app->request->isPost()) {
+			if (isset($_POST['delete'])) {
+				if (functions\CSRF::check($_POST['csrf'])) {
 					$page = $entityManager->find('Page', $id);
-					$page->setName($name);
-					$page->setSlug($slug, $entityManager);
-
+					$entityManager->remove($page);
 					$entityManager->flush();
 
-					$app->flash('message', 'Page Updated Successfully!');
+					$app->flash('message', 'Page Deleted Successfully!');
 					$app->redirect($app->urlFor('message'));
 				}
+			} else {
+				$app->redirect($app->urlFor('list-pages'));
 			}
+		}
 
-			$content = array(
-				'name' => $page->getName(),
-				'slug' => $page->getSlug(),
-				'id' => $page->getId()
-			);
-			$app->render('edit-page.twig', array(
-				'content' => $content,
-				'csrf' =>  functions\csrf\CSRF::generate()
-			));
+		$app->render('delete-page.twig', array(
+			'csrf' =>  functions\CSRF::generate()
+		));
 
-		})->via('GET', 'POST')->name($page->getId());
-	}
+	})->via('GET', 'POST')->name('delete')->conditions(array('id' => '\d+'));

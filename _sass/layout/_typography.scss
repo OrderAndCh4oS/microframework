@@ -50,13 +50,17 @@ input {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: $font-weight-black;
+}
+
+i, em {
+  font-style: oblique;
 }
 
 blockquote {
   margin: 0 0 $column-gutter;
   padding: 0 $column-gutter;
-  border-left: 3px solid $white;
+  border-left: 3px solid $teal;
 }
 
 blockquote p:first-of-type:before {
@@ -104,16 +108,22 @@ p a, p a:visited {
 /* #Lists
   ================================================== */
 ul, ol {
+  margin-left: $half-column-gutter;
+  padding-left: $half-column-gutter;
   margin-bottom: $column-gutter;
 }
 
 ul {
-  list-style: none outside;
-  margin-bottom: $column-gutter*2;
+  list-style: disc outside;
 }
 
 ol {
   list-style: decimal;
+}
+
+
+ul.none {
+  list-style: none;
 }
 
 ul.square {
@@ -126,10 +136,6 @@ ul.circle {
 
 ul.disc {
   list-style: disc outside;
-  margin-left: $column-gutter;
-  padding-left: $half-column-gutter;
-  font-size: $font-three;
-  font-weight: $font-weight-normal;
 }
 
 ul ul, ul ol,

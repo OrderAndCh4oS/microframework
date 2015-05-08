@@ -6,7 +6,8 @@
         "slim/views": "dev-master",
         "twig/twig": "~1.18",
         "doctrine/orm": "*",
-        "phpmailer/phpmailer": "dev-master"
+        "phpmailer/phpmailer": "dev-master",
+        "respect/validation": "0.9.*"
     },
     "license": "NONE",
     "authors": [

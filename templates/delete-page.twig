@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <section>
+            <div class="full-width">
+                <h2>Delete Page</h2>
+                <p>Please confirm page deletion.</p>
+                <form id="delete_form" action="{{ currentUrl() }}" method="post" name="delete_page" novalidate="novalidate">
+                    <input type="hidden" name="csrf" value="{{ csrf }}">
+                    <input class="button" name="delete" type="submit" value="Delete">
+                    <input class="button" name="cancel" type="submit" value="Cancel">
+                </form>
+            </div>
+        </section>
+    {% endblock %}

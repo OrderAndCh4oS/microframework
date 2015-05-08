@@ -1,6 +1,5 @@
 <?php
 
-	use helpers\helpers;
 	// src/Page.php
 
 	/**
@@ -17,6 +16,12 @@
 
 		/** @Column(type="string", unique=true) **/
 		protected $slug;
+
+		/** @Column(type="text") **/
+		protected $content;
+
+		/** @Column(type="text") **/
+		protected $excerpt;
 
 		public function getId()
 		{
@@ -41,7 +46,7 @@
 		public function setSlug($slug)
 		{
 			global $entityManager;
-			$slug = helpers\Helpers::slugify($slug);
+			$slug = functions\Helpers::slugify($slug);
 			$unique = false;
 			$count = 0;
 			while ($unique == false) {
@@ -57,4 +62,22 @@
 			}
 			$this->slug = $slug;
 		}
+
+		public function getContent() {
+			return $this->content;
+		}
+
+
+		public function setContent($content) {
+			$this->content = $content;
+		}
+
+		public function getExcerpt() {
+			return $this->excerpt;
+		}
+
+		public function setExcerpt($excerpt) {
+			$this->excerpt = $excerpt;
+		}
+
 	}

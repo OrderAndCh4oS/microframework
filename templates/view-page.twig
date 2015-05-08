@@ -3,7 +3,8 @@
     {% block body %}
         <article>
             <div class="full-width">
-                {{ content | striptags('<table><tr><td><a>') | raw }}
+                <h1>{{ name }}</h1>
+                {{ content | striptags('<p><br><b><i><strong><em><ul><ol><li><blockquote><img><a>') | raw }}
             </div>
         </article>
     {% endblock %}

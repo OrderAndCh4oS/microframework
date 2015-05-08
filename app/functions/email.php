@@ -1,5 +1,5 @@
 <?php
-	namespace functions\email;
+	namespace functions;
 
 	require_once __DIR__ . '/../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 

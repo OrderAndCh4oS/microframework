@@ -29,6 +29,10 @@
 		new \Slim\Views\TwigExtension(),
 	);
 
+	$app->container->singleton('v', function () {
+		return new Respect\Validation\Validator();
+	});
+
 	$app->add(new \Slim\Middleware\SessionCookie(array(
 		'expires' => '20 minutes',
 		'path' => '/',

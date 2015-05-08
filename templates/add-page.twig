@@ -1,5 +1,6 @@
 {% extends "base.twig" %}
     {% block body %}
+        <script src="{{ siteUrl('/vendors/ckeditor/ckeditor.js') }}"></script>
         <section>
             <div class="full-width">
                 <h2>Add Page</h2>
@@ -13,6 +14,17 @@
                     <div class="form-field">
                         <label for="slug">Slug<span>*</span></label>
                         <input name="slug" id="slug" type="text" value="{{ field.slug }}" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="content">Content<span>*</span></label>
+                        <textarea name="content" id="content"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'content' );
+                        </script>
+                    </div>
+                    <div class="form-field">
+                        <label for="excerpt">Excerpt<span>*</span></label>
+                        <textarea name="excerpt" id="excerpt"></textarea>
                     </div>
                     <input type="hidden" name="csrf" value="{{ csrf }}">
                     <input class="button" name="submit" type="submit" value="Send">

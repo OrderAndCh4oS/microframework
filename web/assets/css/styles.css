@@ -551,41 +551,46 @@ nav ol {
 /* line 51, ../../../_sass/layout/_typography.scss */
 b,
 strong {
-  font-weight: bold;
+  font-weight: 800;
 }
 
 /* line 56, ../../../_sass/layout/_typography.scss */
+i, em {
+  font-style: oblique;
+}
+
+/* line 60, ../../../_sass/layout/_typography.scss */
 blockquote {
   margin: 0 0 1.2rem;
   padding: 0 1.2rem;
-  border-left: 3px solid #E8E8E8;
+  border-left: 3px solid #3fd5ae;
 }
 
-/* line 62, ../../../_sass/layout/_typography.scss */
+/* line 66, ../../../_sass/layout/_typography.scss */
 blockquote p:first-of-type:before {
   content: "\201C";
 }
 
-/* line 65, ../../../_sass/layout/_typography.scss */
+/* line 69, ../../../_sass/layout/_typography.scss */
 blockquote p:last-of-type:after {
   content: "\201D";
 }
 
-/* line 69, ../../../_sass/layout/_typography.scss */
+/* line 73, ../../../_sass/layout/_typography.scss */
 blockquote cite {
   font-style: normal;
 }
-/* line 71, ../../../_sass/layout/_typography.scss */
+/* line 75, ../../../_sass/layout/_typography.scss */
 blockquote cite:before {
   content: "\2014\2009";
 }
 
-/* line 76, ../../../_sass/layout/_typography.scss */
+/* line 80, ../../../_sass/layout/_typography.scss */
 q {
   font-style: italic;
 }
 
-/* line 80, ../../../_sass/layout/_typography.scss */
+/* line 84, ../../../_sass/layout/_typography.scss */
 hr {
   border: solid #262729;
   border-width: 3px 0 0;
@@ -596,68 +601,70 @@ hr {
 
 /* #Links
   ================================================== */
-/* line 90, ../../../_sass/layout/_typography.scss */
+/* line 94, ../../../_sass/layout/_typography.scss */
 a, a:visited {
   color: #262729;
   text-decoration: underline;
   outline: 0;
 }
 
-/* line 96, ../../../_sass/layout/_typography.scss */
+/* line 100, ../../../_sass/layout/_typography.scss */
 a:hover, a:focus {
   color: #262729;
 }
 
-/* line 100, ../../../_sass/layout/_typography.scss */
+/* line 104, ../../../_sass/layout/_typography.scss */
 p a, p a:visited {
   line-height: inherit;
 }
 
 /* #Lists
   ================================================== */
-/* line 106, ../../../_sass/layout/_typography.scss */
+/* line 110, ../../../_sass/layout/_typography.scss */
 ul, ol {
+  margin-left: 0.6rem;
+  padding-left: 0.6rem;
   margin-bottom: 1.2rem;
 }
 
-/* line 110, ../../../_sass/layout/_typography.scss */
+/* line 116, ../../../_sass/layout/_typography.scss */
 ul {
-  list-style: none outside;
-  margin-bottom: 2.4rem;
+  list-style: disc outside;
 }
 
-/* line 115, ../../../_sass/layout/_typography.scss */
+/* line 120, ../../../_sass/layout/_typography.scss */
 ol {
   list-style: decimal;
 }
 
-/* line 119, ../../../_sass/layout/_typography.scss */
+/* line 125, ../../../_sass/layout/_typography.scss */
+ul.none {
+  list-style: none;
+}
+
+/* line 129, ../../../_sass/layout/_typography.scss */
 ul.square {
   list-style: square outside;
 }
 
-/* line 123, ../../../_sass/layout/_typography.scss */
+/* line 133, ../../../_sass/layout/_typography.scss */
 ul.circle {
   list-style: circle outside;
 }
 
-/* line 127, ../../../_sass/layout/_typography.scss */
+/* line 137, ../../../_sass/layout/_typography.scss */
 ul.disc {
   list-style: disc outside;
-  margin-left: 1.2rem;
-  padding-left: 0.6rem;
-  font-size: 1.6rem;
-  font-weight: 400;
 }
 
-/* line 135, ../../../_sass/layout/_typography.scss */
+/* line 141, ../../../_sass/layout/_typography.scss */
 ul ul, ul ol,
 ol ol, ol ul {
   margin: 0 0 0 1.2rem;
   font-size: 20px;
 }
 
-/* line 141, ../../../_sass/layout/_typography.scss */
+/* line 147, ../../../_sass/layout/_typography.scss */
 li {
   line-height: 1.2;
   margin-bottom: 0;
@@ -768,11 +775,12 @@ textarea:focus {
 }
 
 /* line 59, ../../../_sass/elements/_forms.scss */
-textarea {
+textarea, #cke_content {
   min-height: 60px;
+  margin-bottom: 1.2rem;
 }
 
-/* line 63, ../../../_sass/elements/_forms.scss */
+/* line 65, ../../../_sass/elements/_forms.scss */
 label,
 legend {
   display: block;
@@ -781,24 +789,24 @@ legend {
   margin: 0;
 }
 
-/* line 71, ../../../_sass/elements/_forms.scss */
+/* line 73, ../../../_sass/elements/_forms.scss */
 select {
   width: 100%;
 }
 
-/* line 75, ../../../_sass/elements/_forms.scss */
+/* line 77, ../../../_sass/elements/_forms.scss */
 label.inline {
   display: inline;
 }
 
-/* line 79, ../../../_sass/elements/_forms.scss */
+/* line 81, ../../../_sass/elements/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
   margin-bottom: 0;
 }
 
-/* line 85, ../../../_sass/elements/_forms.scss */
+/* line 87, ../../../_sass/elements/_forms.scss */
 label span,
 legend span {
   font-weight: normal;
@@ -806,7 +814,7 @@ legend span {
   color: #262729;
 }
 
-/* line 92, ../../../_sass/elements/_forms.scss */
+/* line 94, ../../../_sass/elements/_forms.scss */
 label.error {
   margin-bottom: 1.2rem;
 }
