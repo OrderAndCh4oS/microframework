@@ -1,3 +1,4 @@
+@import "compass";
 @import 'modular-scale';
 @import "susy";
 @import "functions";
@@ -8,6 +9,10 @@
 @import "elements/_tables";
 @import "elements/_forms";
 @import "elements/_buttons";
+@import "elements/_color";
+@import "elements/_typefaces";
+@import "elements/_message";
+
 @import "layout/_layout";
 @import "cookies";
 @import "elements/_helpers";

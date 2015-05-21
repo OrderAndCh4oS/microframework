@@ -49,18 +49,18 @@
 }
 
 @mixin svg-bg($name) {
-  background: url('../images/#{$name}.png') transparent center center no-repeat; // IE8 & below
-  background: none, url('../images/#{$name}.svg') center center no-repeat;
+  background: url('../svg/png/#{$name}.png') transparent center center no-repeat; // IE8 & below
+  background: linear-gradient(transparent, transparent), none, url('../svg/#{$name}.svg') center center no-repeat;
 }
 
 @mixin svg-bg-center($name) {
-  background: url('../images/#{$name}.png') transparent center center no-repeat; // IE8 & below
-  background: none, url('../images/#{$name}.svg') center center no-repeat;
+  background: url('../svg/png/#{$name}.png') transparent center center no-repeat; // IE8 & below
+  background: linear-gradient(transparent, transparent), none, url('../svg/#{$name}.svg') center center no-repeat;
 }
 
 @mixin svg-bg-link($name) {
-    background: url('../images/#{$name}.png') transparent top center no-repeat; // IE8 & below
-    background: none, url('../images/#{$name}.svg') top center no-repeat;
+    background: url('../svg/png/#{$name}.png') transparent top center no-repeat; // IE8 & below
+    background: linear-gradient(transparent, transparent), none, url('../svg/#{$name}.svg') top center no-repeat;
     &:hover {
       background-position: bottom center;
     }

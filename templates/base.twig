@@ -48,6 +48,9 @@
                     <a href="{{ baseUrl() }}">Home</a>
                     <a href="{{ siteUrl('/add-page/') }}">Add Page</a>
                     <a href="{{ siteUrl('/list-pages/') }}">List Pages</a>
+                    <a href="{{ siteUrl('/products/add/') }}">Add Product</a>
+                    <a href="{{ siteUrl('/products/list/') }}">List Product</a>
+                    <a href="{{ siteUrl('/checkout/') }}">Checkout</a>
                 </div>
             {% endblock %}
         </div>
@@ -63,5 +66,6 @@
 <script>window.jQuery || document.write('<script src="{{ siteUrl('/assets/js/vendor/jquery-1.11.2.min.js') }}"><\/script>')</script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
 <script src="{{ siteUrl('/assets/js/all.min.js') }}"></script>
+{% block stripe %}{% endblock %}
 </body>
 </html>

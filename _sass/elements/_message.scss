@@ -1,0 +1,51 @@
+#dark {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0.6;
+  filter: alpha(opacity=0.6);
+  z-index: 1000000;
+}
+
+#form-message {
+  z-index: 1000001;
+  position: fixed;
+  width: remCalc(280);
+  margin-left: remCalc(-140);
+  left: 50%;
+  top: 30%;
+  padding: $column-gutter;
+  background-color: $white;
+  -webkit-border-radius: remCalc(6);
+  -moz-border-radius: remCalc(6);
+  border-radius: remCalc(6);
+  -webkit-box-shadow: 2px 2px 6px 2px darken($black, 50%);
+  -moz-box-shadow: 2px 2px 6px 2px darken($black, 50%);
+  box-shadow: 2px 2px 6px 2px darken($black, 50%);
+}
+
+#form-message p {
+  font-size: $font-minus-one;
+  margin-bottom: $column-gutter;
+}
+
+#form-message .close {
+  font-weight: $font-weight-bold;
+  line-height: 1em;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+#form-message .close:hover {
+  text-decoration: underline
+}
+
+@media #{$medium-up} {
+  #form-message {
+    width: remCalc(320);
+    margin-left: remCalc(-160);
+  }
+}

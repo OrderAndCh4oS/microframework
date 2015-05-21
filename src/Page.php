@@ -43,21 +43,20 @@
 			return $this->slug;
 		}
 
-		public function setSlug($slug)
-		{
+		public function setSlug($slug) {
 			global $entityManager;
-			$slug = functions\Helpers::slugify($slug);
+			$slug   = functions\Helpers::slugify($slug);
 			$unique = false;
-			$count = 0;
+			$count  = 0;
 			while ($unique == false) {
 				$pageRepository = $entityManager->getRepository('Page');
-				$has_slug = $pageRepository->findOneBy(array('slug' => $slug));
+				$has_slug       = $pageRepository->findOneBy(array('slug' => $slug));
 				if (!$has_slug || ($has_slug->id == $this->id)) {
 					$unique = true;
 				} else {
-					$count++;
+					$count ++;
 					$slug = preg_replace('/(-\d$)/', '', $slug);
-					$slug = $slug .'-'. $count;
+					$slug = $slug . '-' . $count;
 				}
 			}
 			$this->slug = $slug;

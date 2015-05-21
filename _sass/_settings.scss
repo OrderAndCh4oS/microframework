@@ -4,8 +4,11 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
+
+$logo: 'logo';
+
 $base-font-size: 20px;
-$base-line-height: 1.2;
+$base-line-height: 1.3;
 $em-base: $base-font-size !default;
 
 $wrapper-width: 960;
@@ -18,26 +21,47 @@ $ms-ratio: $golden;
 
 $white: #E8E8E8;
 $black: #262729;
+$grey: #6f7278;
 $teal: #3fd5ae;
+
+$error-color: #d42448;
+$valid-color: #3fd42f;
+
+$accent: $teal;
 
 $body-bk-color: $white;
 $wrapper-bk-color: $white;
 
-$header-color: $teal;
+$header-color: $accent;
 $link-color: $black;
-$link-hover-color: $black;
-$border-color: $black;
+$link-hover-color: $accent;
+$link-decoration: none;
 
+/**
+* Border Settings
+*/
+$border-color: $black;
+$border-width: 3px;
+$border-stroke: solid;
+$border: $border-width $border-stroke $border-color;
 
 /**
 * Nav Settings
 */
-$nav-color: $teal;
-$nav-color-hover: $black;
+$nav-color: $black;
+$nav-color-hover: $accent;
 $nav-bk-color: $white;
-$nav-padding: $half-column-gutter 0 ;
-$nav-border: 1px solid $teal;
-$nav-border-color:$teal;
+$nav-bk-color-hover: $accent;
+$nav-padding: remCalc(8,6);
+$nav-border: 1px solid $accent;
+$nav-border-color:$accent;
+
+$sub-nav-color: $black;
+$sub-nav-color-hover: $white;
+$sub-nav-bk-color: $white;
+$sub-nav-bk-color-hover: $accent;
+$sub-nav-padding: remCalc(10,9,9);
+$sub-nav-border: $border;
 
 /**
 * Font Colour Settings
@@ -49,10 +73,14 @@ $text-color: $black;
 */
 $base-font-family: "Univers W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$font-style: oblique;
+
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 $font-weight-black: 800;
 
+$font-minus-two: remCalc(ms(-2));
+$font-minus-one: remCalc(ms(-1));
 $font-one: remCalc(ms(0));
 $font-two: remCalc(ms(1));
 $font-three: remCalc(ms(2));
@@ -66,7 +94,6 @@ $font-ten: remCalc(ms(9));
 $font-eleven: remCalc(ms(10));
 $font-twelve: remCalc(ms(11));
 
-$border: 3px solid $border-color;
 
 /**
 * Form Settings
@@ -75,10 +102,12 @@ $input-color: $black;
 $input-focus-color: $black;
 $input-bk-color: $white;
 $input-focus-bk-color: $white;
-$form-padding: remCalc(4) remCalc(6);
-$form-border: 1px solid $black;
-$form-border-focus: 1px solid $white;
-$form-font-size: $font-one;
+$form-padding: remCalc(10) remCalc(8);
+// Select box needs to be 2px smaller
+$select-padding: remCalc(9) remCalc(8);
+$form-border: $border;
+$form-border-focus: $border-width $border-stroke $accent;
+$form-font-size: $font-minus-one;
 $form-width: 100%;
 
 /**
@@ -86,32 +115,44 @@ $form-width: 100%;
 */
 $button-padding: remCalc(7) remCalc(10) remCalc(6);
 $button-color: $white;
-$button-bk-color: $teal;
-$button-border: 1px solid $teal;
+$button-bk-color: $accent;
+$button-border: $border-width $border-stroke $accent;
 $button-color-hover: $white;
 $button-bk-color-hover: $black;
-$button-border-hover: 1px solid $black;
+$button-border-hover: $border-width $border-stroke $black;
+
+$button-color-disabled: $grey;
+$button-border-disabled: $border-width $border-stroke $grey;
 
 /**
 * Radius Settings
 */
 $global-radius: 6px;
 
+/**
+* Drop Shadow Settings
+*/
+$drop-shadow: rgba(0, 0, 0, .2)  1px 1px 3px;
 
 /**
 * Cookie Bar Settings
 */
 $cookie-bar-bk-color: $black;
 $cookie-bar-color: $white;
-$cookie-bar-link-color: $teal;
-$cookies-on-color: $teal;
+$cookie-bar-link-color: $accent;
+$cookies-on-color: $accent;
 $cookies-off-color: $black;
 
 /**
 * Selection Settings
 */
-$selection-background-color: $teal;
+$selection-background-color: $accent;
 $selection-color: $white;
+
+/**
+* Animation Settings
+*/
+$default-transition: all, 0.2s ease-in-out;
 
 // Media Query Ranges
 

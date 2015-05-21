@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <article>
+            <div class="full-width">
+                <h1>{{ name }}</h1>
+                <p>{{ flash.message }}</p>
+                <h2>Description</h2>
+                <p>{{ content }}</p>
+                <h2>Price</h2>
+                <p><span class="color-teal">£</span>{{ price }}</p>
+                <form method="post" action="{{ currentUrl() }}" name="add_to_basket" novalidate="novalidate">
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" value="Add to Basket">
+                </form>
+            </div>
+        </article>
+    {% endblock %}

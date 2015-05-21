@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+    {% block body %}
+        <script src="{{ siteUrl('/vendors/ckeditor/ckeditor.js') }}"></script>
+        <section>
+            <div class="full-width">
+                <h2>Add Page</h2>
+                <p>{{ flash.message }}</p>
+                <p>{{ name }}</p>
+                <form class="contact-us" id="contact_form" action="{{ siteUrl('/products/add/') }}" method="post" name="enquiry" novalidate="novalidate">
+                    <div class="form-field">
+                        <label for="name">Product Name<span>*</span></label>
+                        <input name="name" id="name" type="text" value="{{ field.name }}" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="slug">Slug<span>*</span></label>
+                        <input name="slug" id="slug" type="text" value="{{ field.slug }}" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="description">Product Description<span>*</span></label>
+                        <textarea name="description" id="description"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="price">Price<span>*</span></label>
+                        <input name="price" id="price" type="number" placeholder="£">
+                    </div>
+                    <input type="hidden" name="csrf" value="{{ csrf }}">
+                    <input class="button" name="submit" type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+    {% endblock %}

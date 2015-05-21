@@ -5,18 +5,17 @@ input[type="reset"],
 input[type="button"] {
   background: $button-bk-color; /* Old browsers */
   border: $button-border;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
   color: $button-color;
   display: inline-block;
   font-weight: $font-weight-bold;
   text-decoration: none;
-  text-transform: uppercase;
   cursor: pointer;
   line-height: $base-line-height;
   padding: $button-padding;
   font-family: $base-font-family;
+  @include border-radius($global-radius);
+  @include box-shadow(none);
+  @include transition(all 0.2s ease-in-out);
 }
 
 a.button:hover,
@@ -27,6 +26,8 @@ input[type="button"]:hover {
   color: $button-color-hover;
   background: $button-bk-color-hover; /* Old browsers */
   border: $button-border-hover;
+  @include box-shadow($drop-shadow);
+  @include transition(all 0.2s ease-in-out);
 }
 
 a.button:active,
@@ -34,8 +35,10 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-  background: $button-color-hover; /* Old browsers */
+  background: $button-bk-color-hover; /* Old browsers */
   border: $button-border-hover;
+  @include box-shadow($drop-shadow);
+  @include transition(all 0.2s ease-in-out);
 }
 
 a.button.full-width,
@@ -47,6 +50,16 @@ input[type="button"].full-width {
   padding-left: 0 !important;
   padding-right: 0 !important;
   text-align: center;
+}
+
+a.button.disabled,
+button.disabled,
+input[type="submit"].disabled,
+input[type="reset"].disabled,
+input[type="button"].disabled {
+  cursor: default;
+  border: $button-border-disabled;
+  background-color: $button-color-disabled;
 }
 
 /* Fix for odd Mozilla border & padding issues */
