@@ -1,9 +1,26 @@
 <?php
 
-	$app->get('/view-cart/', function () use ($app, $stripe) {
+	$app->get('/view-cart/', function () use ($app, $entityManager) {
 
-		$app->render('page.twig', array(
-			'content' => ''
+		$cartRepository = $entityManager->getRepository('Cart');
+		$cartContents = $cartRepository->findBy(array(
+			'user_id' => $app->getCookie('uid')
+		));
+		$cart = "<table>";
+		$cart .= "<th><td>Product Name</td><td>Price</td><td>Quantity</td></th>";
+		foreach ($cartContents as $item) {
+			$product = $entityManager->find('Product', $item->getProductId());
+
+			$cart .= '<tr>';
+			$cart .= '<td>'.$product->getName().'</a></td>';
+			$cart .= '<td>£'.$product->getPrice().'</a></td>';
+			$cart .= '<td>'.$item->getQuantity().'</a></td>';
+			$cart .= '</tr>';
+		}
+		$cart .= "</table>";
+
+		$app->render('cart.twig', array(
+			'cart' => $cart
 		));
 	});
 

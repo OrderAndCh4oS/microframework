@@ -63,7 +63,6 @@
 			$price = $product->getprice();
 
 			if ($app->request->isPost()) {
-
 				$cart = $entityManager->getRepository('Cart')->findOneBy(array(
 					'user_id' => $uid,
 					'product_id' => $product->getId()

@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+    {% block body %}
+        <article>
+            <div class="full-width">
+                {{ cart | striptags('<table><tr><td><a>') | raw }}
+                <a href="{{ siteUrl('/checkout/') }}" class="button">Buy Now</a>
+            </div>
+        </article>
+    {% endblock %}
