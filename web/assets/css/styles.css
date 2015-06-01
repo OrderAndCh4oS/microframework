@@ -1373,6 +1373,11 @@ span {
 }
 
 /* line 18, ../../../_sass/elements/_helpers.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 22, ../../../_sass/elements/_helpers.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
@@ -1380,7 +1385,7 @@ span {
   padding: 0.2em 0;
 }
 
-/* line 25, ../../../_sass/elements/_helpers.scss */
+/* line 29, ../../../_sass/elements/_helpers.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -1389,7 +1394,7 @@ span {
   *text-indent: 100%;
 }
 
-/* line 33, ../../../_sass/elements/_helpers.scss */
+/* line 37, ../../../_sass/elements/_helpers.scss */
 .ir:before {
   content: "";
   display: block;
@@ -1397,13 +1402,13 @@ span {
   height: 150%;
 }
 
-/* line 40, ../../../_sass/elements/_helpers.scss */
+/* line 44, ../../../_sass/elements/_helpers.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 45, ../../../_sass/elements/_helpers.scss */
+/* line 49, ../../../_sass/elements/_helpers.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1415,7 +1420,7 @@ span {
   width: 1px;
 }
 
-/* line 56, ../../../_sass/elements/_helpers.scss */
+/* line 60, ../../../_sass/elements/_helpers.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1426,24 +1431,24 @@ span {
   width: auto;
 }
 
-/* line 66, ../../../_sass/elements/_helpers.scss */
+/* line 70, ../../../_sass/elements/_helpers.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 70, ../../../_sass/elements/_helpers.scss */
+/* line 74, ../../../_sass/elements/_helpers.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 76, ../../../_sass/elements/_helpers.scss */
+/* line 80, ../../../_sass/elements/_helpers.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 80, ../../../_sass/elements/_helpers.scss */
+/* line 84, ../../../_sass/elements/_helpers.scss */
 .clearfix {
   *zoom: 1;
 }

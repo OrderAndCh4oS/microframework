@@ -3,8 +3,11 @@
     {% block body %}
         <article>
             <div class="full-width">
+                {{ cart | striptags('<table><tr><td><a>') | raw }}
+            </div>
+            <div class="full-width">
                 <h2>Checkout</h2>
-                <form action="{{ siteUrl('/charge/') }}" method="post" id="payment-form">
+                <form action="{{ currentUrl }}" method="post" id="payment-form">
                     <span class="payment-errors"></span>
 
                     <div class="form-row">
