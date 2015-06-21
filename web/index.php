@@ -2,7 +2,6 @@
 	require_once '../vendor/autoload.php';
 	require_once '../app/doctrine/bootstrap.php';
 	require_once '../app/functions/helpers.php';
-	require_once '../app/functions/email.php';
 	require_once '../app/functions/csrf.php';
 	require_once '../src/Page.php';
 	require_once '../src/Products.php';
