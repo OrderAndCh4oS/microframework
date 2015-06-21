@@ -5,7 +5,7 @@
                 <h2>Register User</h2>
                 <p>{{ flash.error.message }}</p>
                 <p>{{ name }}</p>
-                <form class="register" id="registration_form" action="{{ siteUrl('/user-details/') }}" method="post" name="register" novalidate="novalidate">
+                <form class="register" id="registration_form" action="{{ siteUrl('/create-user/') }}" method="post" name="register" novalidate="novalidate">
                     <div class="form-field">
                         <label for="username">Username<span>*</span></label>
                         <input name="username" id="username" type="text" value="{{ field.username }}" maxlength="255">
