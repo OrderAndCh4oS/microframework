@@ -9,6 +9,21 @@
         ));
     })->name('register');
 
+    $app->get('/activate/:token/:hash/', function ($token, $hash) use ($app, $entityManager) {
+        $user = $entityManager->getRepository('Sarcoma\Users\Users')->findOneBy(array('activation_token' => $token));
+        if ($user) {
+            if ($hash == $user->hashUsername($user->getUsername())) {
+                $user->setActivationToken(true);
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $app->flash('message', 'User activated');
+                $app->redirect($app->urlFor('message'));
+            }
+        }
+        $app->flash('message', 'Could not activate account');
+        $app->redirect($app->urlFor('message'));
+    })->name('activate');
+
     $app->post('/create-user/', function () use ($app, $entityManager) {
 
         $username  = trim($_POST['username']);
@@ -17,7 +32,6 @@
         if (functions\CSRF::check($_POST['csrf'])) {
             $user  = new Users();
             $error = $user->validate($username, $email, $password, $entityManager);
-
             if (empty($error)) {
 
                 $user->persistUser($username, $email, $password);
@@ -28,18 +42,28 @@
                 $createUser = ($user->getId() ? true : false);
 
                 if ($createUser) {
+                    // todo: Set Url in slim view.
+                    $link = 'http://localhost'.$app->urlFor('activate', array(
+                                'token' => $user->getActivationToken(),
+                                'hash'  => $user->hashUsername($user->getUsername())
+                            ));
                     $message = new Email();
+                    $message->setEmailTitle('Account Activation');
                     $message->setText(array(
                         'Welcome to the site' => 'Please follow the link below to activate your account.',
-                        'Activation Code'     => $user->getActivationToken()
                     ));
-                    $message->setEmailTitle('Account Activation');
+                    $message->setLink(array('Activate Account' => $link));
 
                     $mail = new PHPMailer();
-
-                    $mail->IsSMTP();
-
+                    $mail->IsSMTP(); // enable SMTP
+                    $mail->SMTPDebug  = 1; // debugging: 1 = errors and messages, 2 = messages only
+                    $mail->SMTPAuth   = true; // authentication enabled
+                    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+                    $mail->Host       = "smtp.gmail.com";
+                    $mail->Port       = 465; // or 587
                     $mail->IsHTML(true);
+                    $mail->Username = "sncoopr@gmail.com";
+                    $mail->Password = "cesspit2";
 
                     $mail->FromName = 'Slim';
                     $mail->From     = 'test@test.com';

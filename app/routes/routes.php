@@ -2,7 +2,7 @@
 
 	$app->get( '/', function () use ( $app ) {
 		$app->render( 'home.twig' );
-	});
+    })->name('home');
 
 	$app->get('/message/', function () use ($app) {
 		$app->render('message.twig');
