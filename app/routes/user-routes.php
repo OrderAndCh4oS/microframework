@@ -24,10 +24,10 @@
         $app->redirect($app->urlFor('message'));
     })->name('activate');
 
-    $app->post('/create-user/', function () use ($app, $entityManager) {
+    $app->post('/create-user/', function () use ($app, $view, $entityManager) {
 
         $username  = trim($_POST['username']);
-        $email     = trim($_POST['email']);
+        $email = trim($_POST['email']);
         $password  = trim($_POST['password']);
         if (functions\CSRF::check($_POST['csrf'])) {
             $user  = new Users();
@@ -49,10 +49,9 @@
                             ));
                     $message = new Email();
                     $message->setEmailTitle('Account Activation');
-                    $message->setText(array(
-                        'Welcome to the site' => 'Please follow the link below to activate your account.',
-                    ));
-                    $message->setLink(array('Activate Account' => $link));
+                    $message->setTag('Welcome to the site', 'h2');
+                    $message->setTag('Please follow the link below to activate your account.', 'p');
+                    $message->setLink('Activate Account', $link, 'p');
 
                     $mail = new PHPMailer();
                     $mail->IsSMTP(); // enable SMTP
@@ -70,9 +69,11 @@
                     $mail->AddAddress($email, $username);
 
                     $mail->Subject = 'Account Activation';
-                    $mail->Body    = $message->getMessage();
+                    $message = $view->fetch('email/email.twig', array(
+                        'message' => $message->getMessage()
+                    ));
+                    $mail->Body = $message;
 
-                    // todo: Test Activation Mail (gmail)
                     if ($mail->Send() || true) {
                         $app->flash('message', 'User created successfully');
                         $app->redirect($app->urlFor('message'));
