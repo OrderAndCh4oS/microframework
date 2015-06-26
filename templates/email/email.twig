@@ -1,58 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ email_title }}</title>
     <style type="text/css">
         /* Based on The MailChimp Reset INLINE: Yes. */
         /* Client-specific Styles */
-        #outlook a {
-            padding: 0;
-        }
-
-        /* Force Outlook to provide a "view in browser" menu link. */
-        body {
-            width: 100% !important;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
+        #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
-        .ExternalClass {
-            width: 100%;
-        }
-
-        /* Force Hotmail to display emails at full width */
-        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-            line-height: 100%;
-        }
-
+        .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
         /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
-        #backgroundTable {
-            margin: 0;
-            padding: 0;
-            width: 100% !important;
-            line-height: 100% !important;
-        }
-
+        #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
         /* End reset */
 
         /* Outlook 07, 10 Padding issue fix
         Bring inline: No.*/
-        table td {
-            border-collapse: collapse;
-        }
-
+        table td {border-collapse: collapse;}
         /* Remove spacing around Outlook 07, 10 tables
         Bring inline: Yes */
-        table {
-            border-collapse: collapse;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
+        table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
     </style>
 </head>
 <body bgcolor="{{ body_color }}">
@@ -63,11 +32,21 @@
             <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
             <table cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="{{ table_color }}">
                 <tr>
-                    <td width="600" valign="top" style="padding-left:30px;padding-right:30px;">
-                        {{ message | striptags('<br><h1><h2><h3><h4><h5><h6><p><a><ul><ol><li><strong><em>')|raw }}
+                    <td width="600" valign="top" style="padding-top:24px;padding-bottom:24px;padding-left:24px;
+                    padding-right:24px;">
+                        {{ content.message | striptags('<br><h1><h2><h3><h4><h5><h6><p><a><ul><ol><li><strong><em>')|raw }}
                     </td>
                 </tr>
             </table>
+            {% if content.footer is defined %}
+                <table cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td width="600" valign="top" style="padding-top:6px;padding-left:24px;padding-right:24px;">
+                            {{ content.footer | striptags('<br><h1><h2><h3><h4><h5><h6><p><a><ul><ol><li><strong><em>')|raw }}
+                        </td>
+                    </tr>
+                </table>
+            {% endif %}
             <!-- End example table -->
         </td>
     </tr>

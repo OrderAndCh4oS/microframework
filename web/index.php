@@ -6,7 +6,6 @@
 	require_once '../src/Page.php';
 	require_once '../src/Products.php';
 	require_once '../src/Cart.php';
-    require_once '../src/Cart.php';
 
 	session_cache_limiter(false);
 	session_start();

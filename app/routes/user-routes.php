@@ -26,9 +26,9 @@
 
     $app->post('/create-user/', function () use ($app, $view, $entityManager) {
 
-        $username  = trim($_POST['username']);
-        $email = trim($_POST['email']);
-        $password  = trim($_POST['password']);
+        $username = trim($_POST['username']);
+        $email    = trim($_POST['email']);
+        $password = trim($_POST['password']);
         if (functions\CSRF::check($_POST['csrf'])) {
             $user  = new Users();
             $error = $user->validate($username, $email, $password, $entityManager);
@@ -43,15 +43,22 @@
 
                 if ($createUser) {
                     // todo: Set Url in slim view.
-                    $link = 'http://localhost'.$app->urlFor('activate', array(
-                                'token' => $user->getActivationToken(),
-                                'hash'  => $user->hashUsername($user->getUsername())
-                            ));
-                    $message = new Email();
+                    $link    = 'http://localhost' . $app->urlFor('activate', array(
+                            'token' => $user->getActivationToken(),
+                            'hash'  => $user->hashUsername($user->getUsername())
+                        ));
+                    $message = new Email('#262729', 18);
+                    $message->setBodyColor('#eeeeee');
+                    $message->setTableColor('#e8e8e8');
                     $message->setEmailTitle('Account Activation');
-                    $message->setTag('Welcome to the site', 'h2');
+                    $message->setTag('Welcome to the site', 'h1', array(
+                        'font-size' => $message->modularScale(1),
+                        'color'     => '#3fd5ae'
+                    ));
                     $message->setTag('Please follow the link below to activate your account.', 'p');
-                    $message->setLink('Activate Account', $link, 'p');
+                    $message->setLink('Activate Account', $link, 'p', array(
+                        'color' => '#3fd5ae'
+                    ));
 
                     $mail = new PHPMailer();
                     $mail->IsSMTP(); // enable SMTP
@@ -63,16 +70,17 @@
                     $mail->IsHTML(true);
                     $mail->Username = "sncoopr@gmail.com";
                     $mail->Password = "cesspit2";
-
                     $mail->FromName = 'Slim';
                     $mail->From     = 'test@test.com';
                     $mail->AddAddress($email, $username);
-
                     $mail->Subject = 'Account Activation';
-                    $message = $view->fetch('email/email.twig', array(
-                        'message' => $message->getMessage()
-                    ));
-                    $mail->Body = $message;
+
+                    $mail->Body = $message->getTwigTemplate(array(
+                            'message' => $message->getMessage(),
+                            'footer'  => $message->makeTag('&copy; three&amp;me ltd 2015', 'p', array(
+                                'font-size' => $message->modularScale(- 1)
+                            ))
+                        ), 'email/email.twig', __DIR__ . '/../../templates');
 
                     if ($mail->Send() || true) {
                         $app->flash('message', 'User created successfully');

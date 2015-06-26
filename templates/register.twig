@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-field">
                         <label for="password">Password<span>*</span></label>
-                        <input name="password" id="password" type="text" value="{{ field.password }}" maxlength="255">
+                        <input name="password" id="password" type="password" value="{{ field.password }}" maxlength="255">
                         <p>{{ flash.error.password }}</p>
                     </div>
                     <input type="hidden" name="csrf" value="{{ csrf }}">
