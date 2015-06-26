@@ -60,6 +60,13 @@
                         'color' => '#3fd5ae'
                     ));
 
+                    $body = array(
+                        'message' => $message->getMessage(),
+                        'footer'  => $message->makeTag('&copy; three&amp;me ltd 2015', 'p', array(
+                            'font-size' => $message->modularScale(- 1)
+                        ))
+                    );
+
                     $mail = new PHPMailer();
                     $mail->IsSMTP(); // enable SMTP
                     $mail->SMTPDebug  = 1; // debugging: 1 = errors and messages, 2 = messages only
@@ -75,12 +82,7 @@
                     $mail->AddAddress($email, $username);
                     $mail->Subject = 'Account Activation';
 
-                    $mail->Body = $message->getTwigTemplate(array(
-                            'message' => $message->getMessage(),
-                            'footer'  => $message->makeTag('&copy; three&amp;me ltd 2015', 'p', array(
-                                'font-size' => $message->modularScale(- 1)
-                            ))
-                        ), 'email/email.twig', __DIR__ . '/../../templates');
+                    $mail->Body = $message->getTwigTemplate($body, 'email/email.twig', __DIR__ . '/../../templates');
 
                     if ($mail->Send() || true) {
                         $app->flash('message', 'User created successfully');
