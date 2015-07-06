@@ -58,7 +58,7 @@
                     $app->redirect($app->urlFor('message'));
                 }
             }
-            $app->render('pages/add-page.twig', array(
+            $app->render('pages/page-form.twig', array(
                 'content' => $content,
                 'csrf'    => functions\CSRF::generate()
             ));
@@ -90,12 +90,12 @@
                     $entityManager->persist($page);
                     $entityManager->flush();
 
-                    $app->flash('message', 'Page Added Successfully!');
+                    $app->flash('message', 'Page Updated Successfully!');
                     $app->redirect($app->urlFor('message'));
                 }
             }
 
-            $app->render('/pages/edit-page.twig', array(
+            $app->render('/pages/page-form.twig', array(
                 'title'   => 'Edit Page',
                 'content' => $content,
                 'csrf'    => functions\CSRF::generate()
