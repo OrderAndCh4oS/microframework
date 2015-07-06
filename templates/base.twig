@@ -45,13 +45,13 @@
         <div class="full-width">
             {% block nav %}
                 <div class="main-nav">
-                    <a href="{{ baseUrl() }}">Home</a>
-                    <a href="{{ siteUrl('/add-page/') }}">Add Page</a>
-                    <a href="{{ siteUrl('/list-pages/') }}">List Pages</a>
-                    <a href="{{ siteUrl('/products/add/') }}">Add Product</a>
-                    <a href="{{ siteUrl('/products/list/') }}">List Products</a>
+                    <a href="{{ baseUrl() }}">Home</a> <a href="{{ urlFor('add-page') }}">Add Page</a>
+                    <a href="{{ urlFor('list-pages') }}">List Pages</a>
+                    <a href="{{ urlFor('add-product') }}">Add Product</a>
+                    <a href="{{ urlFor('list-products') }}">List Products</a>
                     <a href="{{ siteUrl('/view-cart/') }}">View Cart</a>
-                    <a href="{{ siteUrl('/register/') }}">Register</a>
+                    <a href="{{ siteUrl('/register/') }}">Register</a> <a href="{{ siteUrl('/login/') }}">Log In</a>
+                    <a href="{{ siteUrl('/logout/') }}">Log Out</a>
                 </div>
             {% endblock %}
         </div>

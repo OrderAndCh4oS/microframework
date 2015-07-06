@@ -9,6 +9,27 @@
         ));
     })->name('register');
 
+    $app->map('/login/', function () use ($app, $entityManager) {
+        if ($app->request->isPost()) {
+            $username = trim($_POST['username']);
+            $password = trim($_POST['password']);
+            if (Users::login($username, $password, $entityManager)) {
+                $app->redirect($app->urlFor('home'));
+            } else {
+                $app->flash('message', 'Username or Password was incorrect');
+                $app->redirect($app->urlFor('login'));
+            }
+        }
+        $app->render('login.twig', array(
+            'csrf' => functions\CSRF::generate()
+        ));
+    })->via('GET', 'POST')->name('login');
+
+    $app->get('/logout/', function () use ($app) {
+        Users::logout();
+        $app->redirect($app->urlFor('login'));
+    })->name('logout');
+
     $app->get('/activate/:token/:hash/', function ($token, $hash) use ($app, $entityManager) {
         $user = $entityManager->getRepository('Sarcoma\Users\Users')->findOneBy(array('activation_token' => $token));
         if ($user) {

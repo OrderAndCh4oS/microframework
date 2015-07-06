@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+    {% block body %}
+        <section>
+            <div class="full-width">
+                <h2>Login User</h2>
+                <p>{{ flash.error.message }}</p>
+                <p>{{ name }}</p>
+                <form class="login" id="login_form" action="{{ siteUrl('/login/') }}" method="post" name="register" novalidate="novalidate">
+                    <div class="form-field">
+                        <label for="username">Username<span>*</span></label>
+                        <input name="username" id="username" type="text" value="{{ field.username }}" maxlength="255">
+                        <p>{{ flash.error.username }}</p>
+                    </div>
+                    <div class="form-field">
+                        <label for="password">Password<span>*</span></label>
+                        <input name="password" id="password" type="password" value="{{ field.password }}" maxlength="255">
+                        <p>{{ flash.error.password }}</p>
+                    </div>
+                    <input type="hidden" name="csrf" value="{{ csrf }}">
+                    <input class="button" name="submit" type="submit" value="Login">
+                </form>
+            </div>
+        </section>
+    {% endblock %}
