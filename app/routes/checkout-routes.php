@@ -22,7 +22,7 @@
 		$app->render('cart.twig', array(
 			'cart' => $cart
 		));
-	});
+    })->name('view-cart');
 
 	$app->map('/checkout/', function () use ($app, $entityManager, $stripe) {
 

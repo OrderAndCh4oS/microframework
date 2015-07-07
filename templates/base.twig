@@ -49,9 +49,7 @@
                     <a href="{{ urlFor('list-pages') }}">List Pages</a>
                     <a href="{{ urlFor('add-product') }}">Add Product</a>
                     <a href="{{ urlFor('list-products') }}">List Products</a>
-                    <a href="{{ siteUrl('/view-cart/') }}">View Cart</a>
-                    <a href="{{ siteUrl('/register/') }}">Register</a> <a href="{{ siteUrl('/login/') }}">Log In</a>
-                    <a href="{{ siteUrl('/logout/') }}">Log Out</a>
+                    <a href="{{ urlFor('view-cart') }}">View Cart</a> <a href="{{ urlFor('logout') }}">Log Out</a>
                 </div>
             {% endblock %}
         </div>
