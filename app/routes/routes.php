@@ -1,6 +1,6 @@
 <?php
 
-    $app->get('/', $authenticate(), function () use ($app) {
+    $app->get('/', $authenticate('USER', $entityManager), function () use ($app) {
 		$app->render( 'home.twig' );
     })->name('home');
 

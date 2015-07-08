@@ -13,6 +13,7 @@
         if ($app->request->isPost()) {
             $username = trim($_POST['username']);
             $password = trim($_POST['password']);
+
             if (Users::login($username, $password, $entityManager)) {
                 $app->redirect($app->urlFor('home'));
             } else {
@@ -20,6 +21,7 @@
                 $app->redirect($app->urlFor('login'));
             }
         }
+
         $app->render('login.twig', array(
             'csrf' => functions\CSRF::generate()
         ));

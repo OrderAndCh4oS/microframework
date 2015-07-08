@@ -12,7 +12,7 @@
         ));
     })->name('view');
 
-    $app->group('/admin/pages', $authenticate(), function () use ($app, $entityManager) {
+    $app->group('/admin/pages', $authenticate('USER', $entityManager), function () use ($app, $entityManager) {
 
         $app->get('/list-pages/', function () use ($app, $entityManager) {
 

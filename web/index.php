@@ -42,9 +42,9 @@
         return new Respect\Validation\Validator();
     });
 
-    $authenticate = function ($role = 'USER') {
-        return function () use ($role) {
-            if (!isset($_SESSION['role']) || $_SESSION['role'] !== $role) {
+    $authenticate = function ($role = 'USER', $entityManager) {
+        return function () use ($role, $entityManager) {
+            if (\Sarcoma\Users\Users::auth($_SESSION['username'], $entityManager)) {
                 $app = \Slim\Slim::getInstance();
                 $app->flash('message', 'Login required');
                 $app->redirect($app->urlFor('login'));

@@ -49,7 +49,7 @@
         })->via('GET', 'POST')->name('view-product');
     });
 
-    $app->group('/admin/products', $authenticate(), function () use ($app, $entityManager) {
+    $app->group('/admin/products', $authenticate('USER', $entityManager), function () use ($app, $entityManager) {
 
         $app->get('/list/', function () use ($app, $entityManager) {
 
