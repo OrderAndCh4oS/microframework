@@ -30,7 +30,7 @@
                 }
             });
         }
-    }
+    };
 
     //when the dom has loaded setup form validation rules
     $(D).ready(function($) {

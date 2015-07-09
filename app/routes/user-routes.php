@@ -15,7 +15,7 @@
             $password = trim($_POST['password']);
 
             if (Users::login($username, $password, $entityManager)) {
-                $app->redirect($app->urlFor('home'));
+                $app->redirect($app->urlFor('login'));
             } else {
                 $app->flash('message', 'Username or Password was incorrect');
                 $app->redirect($app->urlFor('login'));
@@ -107,8 +107,8 @@
                     $mail->Body = $message->getTwigTemplate($body, 'email/email.twig', __DIR__ . '/../../templates');
 
                     if ($mail->Send() || true) {
-                        $app->flash('message', 'User created successfully');
-                        $app->redirect($app->urlFor('message'));
+                        $app->flash('message', 'Check your email for your activation link');
+                        $app->redirect($app->urlFor('login'));
                     } else {
                         $app->flash('message', 'There was an error sending activation details');
                         $app->redirect($app->urlFor('message'));

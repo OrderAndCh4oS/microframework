@@ -44,8 +44,17 @@
 
     $authenticate = function ($role = 'USER', $entityManager) {
         return function () use ($role, $entityManager) {
-            if (\Sarcoma\Users\Users::auth($_SESSION['username'], $entityManager)) {
-                $app = \Slim\Slim::getInstance();
+            $app = \Slim\Slim::getInstance();
+            if (isset($_SESSION['username'])) {
+                $userRepository = $entityManager->getRepository('Sarcoma\Users\Users');
+                $user           = $userRepository->findOneBy(array(
+                    'username' => $_SESSION['username']
+                ));
+                if (!\Sarcoma\Users\Users::auth($user->getRole(), $role)) {
+                    $app->flash('message', 'Login required');
+                    $app->redirect($app->urlFor('login'));
+                }
+            } else {
                 $app->flash('message', 'Login required');
                 $app->redirect($app->urlFor('login'));
             }
