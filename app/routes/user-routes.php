@@ -15,7 +15,7 @@ $app->map('/login/', function () use ($app, $entityManager) {
         $password = trim($_POST['password']);
 
         if (Users::login($username, $password, $entityManager)) {
-            $app->redirect($app->urlFor('login'));
+            $app->redirect($app->urlFor('home'));
         } else {
             $app->flash('message', 'Username or Password was incorrect');
             $app->redirect($app->urlFor('login'));
