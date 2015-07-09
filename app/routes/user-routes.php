@@ -65,7 +65,6 @@
                 $createUser = ($user->getId() ? true : false);
 
                 if ($createUser) {
-                    // todo: Set Url in slim view.
                     $link    = 'http://localhost' . $app->urlFor('activate', array(
                             'token' => $user->getActivationToken(),
                             'hash'  => $user->hashUsername($user->getUsername())
@@ -118,13 +117,9 @@
                     $app->flash('message', 'User could not be created');
                     $app->redirect($app->urlFor('message'));
                 }
-            } else {
-                $error['message'] = 'User could not be created, please check fields';
-                $app->flash('error', $error);
-                $app->redirect($app->urlFor('register'));
             }
         }
-        $app->render('register.twig', array(
-            'csrf' => functions\CSRF::generate()
-        ));
+        $error['message'] = 'User could not be created, please check fields';
+        $app->flash('error', $error);
+        $app->redirect($app->urlFor('register'));
     });
