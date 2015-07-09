@@ -1482,7 +1482,7 @@
         }, write: function (a) {
             this.$.open("text/html", "replace");
             CKEDITOR.env.ie && (a = a.replace(/(?:^\s*<!DOCTYPE[^>]*?>)|^/i, '$&\n<script data-cke-temp="1">(' +
-            CKEDITOR.tools.fixDomain + ")();<\/script>"));
+                CKEDITOR.tools.fixDomain + ")();<\/script>"));
             this.$.write(a);
             this.$.close()
         }, find: function (a) {
@@ -6230,7 +6230,7 @@
                 if (!this.hasClass(a)) {
                     var b = this.attributes["class"] || "";
                     this.attributes["class"] = b + (b ? " " : "") +
-                    a
+                        a
                 }
             }, removeClass: function (a) {
                 var b = this.attributes["class"];
@@ -7935,7 +7935,7 @@
                 } catch (f) {
                 }
                 d = e && CKEDITOR.dom.element.get(e.item &&
-                e.item(0) || e.parentElement())
+                        e.item(0) || e.parentElement())
             }
             if (!d || !(d.type == CKEDITOR.NODE_ELEMENT || d.type == CKEDITOR.NODE_TEXT) || !this.root.equals(d) && !this.root.contains(d)) {
                 this._.cache.type = CKEDITOR.SELECTION_NONE;
@@ -9738,7 +9738,7 @@
                     CKEDITOR.ui.dialog.uiElement.call(this, b, c, f, "fieldset", null, null, function () {
                         var a = [];
                         e && a.push("<legend" +
-                        (c.labelStyle ? ' style="' + c.labelStyle + '"' : "") + ">" + e + "</legend>");
+                            (c.labelStyle ? ' style="' + c.labelStyle + '"' : "") + ">" + e + "</legend>");
                         for (var b = 0; b < d.length; b++)a.push(d[b]);
                         return a.join("")
                     })
@@ -10161,7 +10161,7 @@
                     var b = "";
                     f == CKEDITOR.DIALOG_RESIZE_WIDTH ? b = " cke_resizer_horizontal" : f == CKEDITOR.DIALOG_RESIZE_HEIGHT && (b = " cke_resizer_vertical");
                     b = CKEDITOR.dom.element.createFromHtml('<div class="cke_resizer' + b + " cke_resizer_" + h.lang.dir + '" title="' + CKEDITOR.tools.htmlEncode(h.lang.common.resize) + '" onmousedown="CKEDITOR.tools.callFunction(' + n + ', event )">' +
-                    ("ltr" == h.lang.dir ? "◢" : "◣") + "</div>");
+                        ("ltr" == h.lang.dir ? "◢" : "◣") + "</div>");
                     a.parts.footer.append(b, 1)
                 });
                 h.on("destroy", function () {
@@ -10205,7 +10205,7 @@
                 };
                 b.$.setTimeout(function () {
                     m.prevScrollHandler = window.onscroll || function () {
-                    };
+                        };
                     window.onscroll = m
                 }, 0);
                 h()
@@ -10215,7 +10215,7 @@
         function K(a) {
             q && (a.focusManager.remove(q), a = CKEDITOR.document.getWindow(), q.hide(), a.removeListener("resize", F), CKEDITOR.env.ie6Compat && a.$.setTimeout(function () {
                 window.onscroll = window.onscroll && window.onscroll.prevScrollHandler ||
-                null
+                    null
             }, 0), F = null)
         }
 
@@ -10554,7 +10554,7 @@
                     c.unselectable();
                     this.parts.tabs.append(c);
                     a.accessKey && (O(this, this, "CTRL+" +
-                    a.accessKey, Y, Z), this._.accessKeyMap["CTRL+" + a.accessKey] = a.id)
+                        a.accessKey, Y, Z), this._.accessKeyMap["CTRL+" + a.accessKey] = a.id)
                 }
             }, selectPage: function (a) {
                 if (this._.currentTabId != a && !this._.tabs[a][0].hasClass("cke_dialog_tab_disabled") && !1 !== this.fire("selectPage", {
@@ -10582,7 +10582,7 @@
                 b && (1 != this._.pageCount && b.isVisible()) && (a == this._.currentTabId && this.selectPage(t.call(this)), b.hide(), this._.pageCount--, this.updateStyle())
             }, showPage: function (a) {
                 if (a = this._.tabs[a] &&
-                    this._.tabs[a][0])a.show(), this._.pageCount++, this.updateStyle()
+                        this._.tabs[a][0])a.show(), this._.pageCount++, this.updateStyle()
             }, getElement: function () {
                 return this._.element
             }, getName: function () {
@@ -10859,7 +10859,7 @@
                             CKEDITOR.env.webkit && b.push("float:none;");
                             b.push('"');
                             b.push('align="', CKEDITOR.tools.htmlEncode(d &&
-                            d.align || ("ltr" == a.getParentEditor().lang.dir ? "left" : "right")), '" ');
+                                d.align || ("ltr" == a.getParentEditor().lang.dir ? "left" : "right")), '" ');
                             b.push("><tbody>");
                             for (var e = 0; e < c.length; e++) {
                                 var i = [];
@@ -11400,11 +11400,11 @@
             if (a.match(/^[^<]$/))return a;
             CKEDITOR.env.webkit && -1 < a.indexOf("<div>") && (a = a.replace(/^(<div>(<br>|)<\/div>)(?!$|(<div>(<br>|)<\/div>))/g,
                 "<br>").replace(/^(<div>(<br>|)<\/div>){2}(?!$)/g, "<div></div>"), a.match(/<div>(<br>|)<\/div>/) && (a = "<p>" + a.replace(/(<div>(<br>|)<\/div>)+/g, function (a) {
-                return c(a.split("</div><div>").length + 1)
-            }) + "</p>"), a = a.replace(/<\/div><div>/g, "<br>"), a = a.replace(/<\/?div>/g, ""));
+                    return c(a.split("</div><div>").length + 1)
+                }) + "</p>"), a = a.replace(/<\/div><div>/g, "<br>"), a = a.replace(/<\/?div>/g, ""));
             CKEDITOR.env.gecko && b.enterMode != CKEDITOR.ENTER_BR && (CKEDITOR.env.gecko && (a = a.replace(/^<br><br>$/, "<br>")), -1 < a.indexOf("<br><br>") && (a = "<p>" + a.replace(/(<br>){2,}/g, function (a) {
-                return c(a.length / 4)
-            }) + "</p>"));
+                    return c(a.length / 4)
+                }) + "</p>"));
             return o(b, a)
         }
 
@@ -11790,7 +11790,7 @@
                         a.toolbox = new u;
                         var d = CKEDITOR.tools.getNextId(), b = ['<span id="', d, '" class="cke_voice_label">', a.lang.toolbar.toolbars, "</span>", '<span id="' + a.ui.spaceId("toolbox") + '" class="cke_toolbox" role="group" aria-labelledby="', d, '" onmousedown="return false;">'], d = !1 !== a.config.toolbarStartupExpanded, e, j;
                         a.config.toolbarCanCollapse && a.elementMode != CKEDITOR.ELEMENT_MODE_INLINE && b.push('<span class="cke_toolbox_main"' +
-                        (d ? ">" : ' style="display:none">'));
+                            (d ? ">" : ' style="display:none">'));
                         for (var o = a.toolbox.toolbars, f = w(a), k = 0; k < f.length; k++) {
                             var i, l = 0, r, m = f[k], s;
                             if (m)if (e && (b.push("</span>"), j = e = 0), "/" === m)b.push('<span class="cke_toolbar_break"></span>'); else {
@@ -11851,7 +11851,7 @@
                                 }, modes: {wysiwyg: 1, source: 1}
                             });
                             a.setKeystroke(CKEDITOR.ALT + (CKEDITOR.env.ie || CKEDITOR.env.webkit ?
-                                189 : 109), "toolbarCollapse");
+                                    189 : 109), "toolbarCollapse");
                             b.push('<a title="' + (d ? a.lang.toolbar.toolbarCollapse : a.lang.toolbar.toolbarExpand) + '" id="' + a.ui.spaceId("toolbar_collapser") + '" tabIndex="-1" class="cke_toolbox_collapser');
                             d || b.push(" cke_toolbox_collapser_min");
                             b.push('" onclick="CKEDITOR.tools.callFunction(' + v + ')">', '<span class="cke_arrow">&#9650;</span>', "</a>")
@@ -12127,7 +12127,7 @@
             }();
             if (m) {
                 var i = new CKEDITOR.template('<div id="cke_{name}" class="cke {id} cke_reset_all cke_chrome cke_editor_{name} cke_float cke_{langDir} ' + CKEDITOR.env.cssClass + '" dir="{langDir}" title="' + (CKEDITOR.env.gecko ? " " : "") + '" lang="{langCode}" role="application" style="{style}"' +
-                    (a.title ? ' aria-labelledby="cke_{name}_arialbl"' : " ") + ">" + (a.title ? '<span id="cke_{name}_arialbl" class="cke_voice_label">{voiceLabel}</span>' : " ") + '<div class="cke_inner"><div id="{topId}" class="cke_top" role="presentation">{content}</div></div></div>'), b = CKEDITOR.document.getBody().append(CKEDITOR.dom.element.createFromHtml(i.output({
+                        (a.title ? ' aria-labelledby="cke_{name}_arialbl"' : " ") + ">" + (a.title ? '<span id="cke_{name}_arialbl" class="cke_voice_label">{voiceLabel}</span>' : " ") + '<div class="cke_inner"><div id="{topId}" class="cke_top" role="presentation">{content}</div></div></div>'), b = CKEDITOR.document.getBody().append(CKEDITOR.dom.element.createFromHtml(i.output({
                         content: m,
                         id: a.id,
                         langDir: a.lang.dir,
@@ -12312,7 +12312,7 @@
                     var g = a.ui.space("contents");
                     g.append(d);
                     if (c = CKEDITOR.env.ie ||
-                        CKEDITOR.env.gecko)d.on("load", b);
+                            CKEDITOR.env.gecko)d.on("load", b);
                     var f = a.title, h = a.fire("ariaEditorHelpLabel", {}).label;
                     f && (CKEDITOR.env.ie && h && (f += ", " + h), d.setAttribute("title", f));
                     if (h) {
@@ -12373,7 +12373,7 @@
                             c.docType + '<html dir="' + c.contentsLangDirection + '" lang="' + (c.contentsLanguage || b.langCode) + '"><head><title>' + this._.docTitle + "</title>" + h + f + "</head><body" + (c.bodyId ? ' id="' + c.bodyId + '"' : "") + (c.bodyClass ? ' class="' + c.bodyClass + '"' : "") + ">" + a + "</body></html>";
                         CKEDITOR.env.gecko && (a = a.replace(/<body/, '<body contenteditable="true" '), 2E4 > CKEDITOR.env.version && (a = a.replace(/<body[^>]*>/, "$&<\!-- cke-content-start --\>")));
                         c = '<script id="cke_actscrpt" type="text/javascript"' + (CKEDITOR.env.ie ? ' defer="defer" ' :
-                            "") + ">var wasLoaded=0;function onload(){if(!wasLoaded)window.parent.CKEDITOR.tools.callFunction(" + this._.frameLoadedHandler + ",window);wasLoaded=1;}" + (CKEDITOR.env.ie ? "onload();" : 'document.addEventListener("DOMContentLoaded", onload, false );') + "<\/script>";
+                                "") + ">var wasLoaded=0;function onload(){if(!wasLoaded)window.parent.CKEDITOR.tools.callFunction(" + this._.frameLoadedHandler + ",window);wasLoaded=1;}" + (CKEDITOR.env.ie ? "onload();" : 'document.addEventListener("DOMContentLoaded", onload, false );') + "<\/script>";
                         CKEDITOR.env.ie && 9 > CKEDITOR.env.version && (c += '<script id="cke_shimscrpt">window.parent.CKEDITOR.tools.enableHtml5Elements(document)<\/script>');
                         h && (CKEDITOR.env.ie && 10 > CKEDITOR.env.version) && (c += '<script id="cke_basetagscrpt">var baseTag = document.querySelector( "base" );baseTag.href = baseTag.href;<\/script>');
                         a = a.replace(/(?=\s*<\/(:?head)>)/, c);
@@ -12876,7 +12876,7 @@
                         type: a.match(v) ? a : "frame",
                         name: a
                     }; else if (a = (a = b.data("cke-pa-onclick") ||
-                        b.getAttribute("onclick")) && a.match(y))for (g.target = {
+                                b.getAttribute("onclick")) && a.match(y))for (g.target = {
                         type: "popup",
                         name: a[1]
                     }; e = z.exec(a[2]);)("yes" == e[2] || "1" == e[2]) && !(e[1]in{

@@ -478,7 +478,7 @@
                     items: [[c.lang.common.notSet, ""], [c.lang.common.targetNew, "_blank"], [c.lang.common.targetTop, "_top"], [c.lang.common.targetSelf, "_self"], [c.lang.common.targetParent, "_parent"]],
                     setup: function (a, b) {
                         2 == a && this.setValue(b.getAttribute("target") ||
-                        "")
+                            "")
                     },
                     commit: function (a, b) {
                         2 == a && (this.getValue() || this.isChanged()) && b.setAttribute("target", this.getValue())

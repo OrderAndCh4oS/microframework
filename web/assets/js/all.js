@@ -5,9 +5,10 @@
  */
 
 // Avoid `console` errors in browsers that lack a console.
-(function() {
+(function () {
     var method;
-    var noop = function () {};
+    var noop = function () {
+    };
     var methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
         'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
@@ -69,14 +70,15 @@
             // Replace server-side written pluses with spaces.
             // If we can't decode the cookie, ignore it, it's unusable.
             s = decodeURIComponent(s.replace(pluses, ' '));
-        } catch(e) {
+        } catch (e) {
             return;
         }
 
         try {
             // If we can't parse the cookie, ignore it, it's unusable.
             return config.json ? JSON.parse(s) : s;
-        } catch(e) {}
+        } catch (e) {
+        }
     }
 
     function read(s, converter) {
@@ -98,9 +100,9 @@
             return (document.cookie = [
                 encode(key), '=', stringifyCookieValue(value),
                 options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
-                options.path    ? '; path=' + options.path : '',
-                options.domain  ? '; domain=' + options.domain : '',
-                options.secure  ? '; secure' : ''
+                options.path ? '; path=' + options.path : '',
+                options.domain ? '; domain=' + options.domain : '',
+                options.secure ? '; secure' : ''
             ].join(''));
         }
 
@@ -138,45 +140,43 @@
     $.removeCookie = function (key, options) {
         if ($.cookie(key) !== undefined) {
             // Must not alter options, thus extending a fresh object...
-            $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+            $.cookie(key, '', $.extend({}, options, {expires: -1}));
             return true;
         }
         return false;
     };
 
 }));
-$(document).ready(function() {
+$(document).ready(function () {
     cookies();
-    $('#close-cookie-bar').click(function(event){
+    $('#close-cookie-bar').click(function (event) {
         event.preventDefault();
         $('#cookie-disclaimer').hide();
     });
 });
 
 function cookies() {
-    if(!$.cookie('a-ok-cookie') && !$.cookie('no-cookies-cookie')) {
-        $.cookie("a-ok-cookie", 1, { path: "/", expires : 365*5 });
+    if (!$.cookie('a-ok-cookie') && !$.cookie('no-cookies-cookie')) {
+        $.cookie("a-ok-cookie", 1, {path: "/", expires: 365 * 5});
 
         var bar,
             host = location.host,
-            url = 'http://'+host+'/cookie-policy/';
+            url = 'http://' + host + '/cookie-policy/';
 
         bar = '<div id="cookie-disclaimer"><p>';
         bar += 'We use cookies to help improve our site, <a href="';
         bar += url;
-        bar +='">find out more</a> <a href="#" id="close-cookie-bar" class="close-cookie-bar"></a>';
+        bar += '">find out more</a> <a href="#" id="close-cookie-bar" class="close-cookie-bar"></a>';
         bar += '</p></div>';
         $('body').append(bar);
     }
 }
-(function($,W,D)
-{
+(function ($, W, D) {
     var JQUERY4U = {};
 
     JQUERY4U.UTIL =
     {
-        setupFormValidation: function()
-        {
+        setupFormValidation: function () {
             //form validation rules
             $("#contact_form").validate({
                 rules: {
@@ -196,7 +196,7 @@ function cookies() {
                     clientemail: "Please enter a valid email address",
                     enquiry: "Don't forget to write your message"
                 },
-                submitHandler: function(form) {
+                submitHandler: function (form) {
                     form.submit();
                 }
             });
@@ -204,7 +204,7 @@ function cookies() {
     }
 
     //when the dom has loaded setup form validation rules
-    $(D).ready(function($) {
+    $(D).ready(function ($) {
         JQUERY4U.UTIL.setupFormValidation();
     });
 

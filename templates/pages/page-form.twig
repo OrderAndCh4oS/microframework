@@ -19,15 +19,15 @@
                         <label for="content">Content<span>*</span></label>
                         <textarea name="content" id="content">{{ content.content }}</textarea>
                         <script>
-                            CKEDITOR.replace( 'content' );
+                            CKEDITOR.replace('content');
                         </script>
                     </div>
                     <div class="form-field">
                         <label for="excerpt">Excerpt<span>*</span></label>
-                         <textarea name="excerpt" id="excerpt">{{ content.excerpt }}</textarea>
+                        <textarea name="excerpt" id="excerpt">{{ content.excerpt }}</textarea>
                     </div>
                     {% if content.id is defined %}
-                    <input type="hidden" value="{{ content.id }}" name="id">
+                        <input type="hidden" value="{{ content.id }}" name="id">
                     {% endif %}
                     <input type="hidden" name="csrf" value="{{ csrf }}">
                     <input class="button" name="submit" type="submit" value="Send">

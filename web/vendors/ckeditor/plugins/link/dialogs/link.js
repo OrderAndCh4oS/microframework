@@ -45,7 +45,7 @@
                         a.layout()
                     }, setup: function (a) {
                         this.setValue(a.type ||
-                        "url")
+                            "url")
                     }, commit: function (a) {
                         a.type = this.getValue()
                     }

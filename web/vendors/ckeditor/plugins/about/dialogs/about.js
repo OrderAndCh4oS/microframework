@@ -10,7 +10,7 @@ CKEDITOR.dialog.add("about", function (a) {
                 type: "html",
                 html: '<style type="text/css">.cke_about_container{color:#000 !important;padding:10px 10px 0;margin-top:5px}.cke_about_container p{margin: 0 0 10px;}.cke_about_container .cke_about_logo{height:81px;background-color:#fff;background-image:url(' +
                 b + ");" + (CKEDITOR.env.hidpi ? "background-size:163px 58px;" : "") + 'background-position:center; background-repeat:no-repeat;margin-bottom:10px;}.cke_about_container a{cursor:pointer !important;color:#00B2CE !important;text-decoration:underline !important;}</style><div class="cke_about_container"><div class="cke_about_logo"></div><p>CKEditor ' + CKEDITOR.version + " (revision " + CKEDITOR.revision + ')<br><a target="_blank" href="http://ckeditor.com/">http://ckeditor.com</a></p><p>' + a.help.replace("$1", '<a target="_blank" href="http://docs.ckeditor.com/user">' +
-                a.userGuide + "</a>") + "</p><p>" + a.moreInfo + '<br><a target="_blank" href="http://ckeditor.com/about/license">http://ckeditor.com/about/license</a></p><p>' + a.copy.replace("$1", '<a target="_blank" href="http://cksource.com/">CKSource</a> - Frederico Knabben') + "</p></div>"
+                    a.userGuide + "</a>") + "</p><p>" + a.moreInfo + '<br><a target="_blank" href="http://ckeditor.com/about/license">http://ckeditor.com/about/license</a></p><p>' + a.copy.replace("$1", '<a target="_blank" href="http://cksource.com/">CKSource</a> - Frederico Knabben') + "</p></div>"
             }]
         }], buttons: [CKEDITOR.dialog.cancelButton]
     }
