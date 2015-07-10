@@ -10,7 +10,7 @@
         "respect/validation": "0.9.*",
         "stripe/stripe-php": "2.*",
         "sarcoma/email": "dev-master",
-        "sarcoma/users": "dev-master"
+        "sarcoma/users": "1.0.0"
     },
     "license": "NONE",
     "authors": [

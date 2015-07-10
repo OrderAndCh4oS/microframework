@@ -13,8 +13,8 @@ $app->map('/login/', function () use ($app, $entityManager) {
     if ($app->request->isPost()) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
-
-        if (Users::login($username, $password, $entityManager)) {
+        $user = $entityManager->getRepository('\Sarcoma\Users\Users')->findOneBy(array('username' => $username));
+        if (Users::login($password, $user)) {
             $app->redirect($app->urlFor('home'));
         } else {
             $app->flash('message', 'Username or Password was incorrect');
@@ -54,10 +54,13 @@ $app->post('/create-user/', function () use ($app, $view, $entityManager) {
     $password = trim($_POST['password']);
     if (functions\CSRF::check($_POST['csrf'])) {
         $user  = new Users();
-        $error = $user->validate($username, $email, $password, $entityManager);
+        $error = $user->validate($username, $email, $password);
         if (empty($error)) {
 
-            $user->persistUser($username, $email, $password);
+            $user->setUsername($username);
+            $user->setEmail($email);
+            $user->setPasswordHash($password);
+            $user->setRole();
             $user->setActivationToken();
             $entityManager->persist($user);
             $entityManager->flush();
