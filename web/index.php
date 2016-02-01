@@ -4,8 +4,6 @@ require_once '../app/doctrine/bootstrap.php';
 require_once '../app/functions/helpers.php';
 require_once '../app/functions/csrf.php';
 require_once '../src/Page.php';
-require_once '../src/Products.php';
-require_once '../src/Cart.php';
 
 session_cache_limiter(false);
 session_start();

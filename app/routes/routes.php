@@ -11,5 +11,3 @@ $app->get('/message/', function () use ($app) {
 
 require_once 'user-routes.php';
 require_once 'page-routes.php';
-require_once 'product-routes.php';
-require_once 'checkout-routes.php';
