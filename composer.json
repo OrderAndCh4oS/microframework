@@ -1,6 +1,6 @@
 {
-    "name": "tam/slim",
-    "description": "three&me slim implementation",
+    "name": "sarcoma/slim",
+    "description": "sarcoma slim implementation",
     "require": {
         "slim/slim": "~2.5",
         "slim/views": "0.1.*",
